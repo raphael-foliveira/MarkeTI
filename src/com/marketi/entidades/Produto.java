@@ -12,7 +12,7 @@ public class Produto {
         String modelo, 
         String lote, 
         double precoBase
-        ){
+    ) {
         this.id = idGenerator;
         this.marca = marca;
         this.modelo = modelo;
