@@ -2,27 +2,22 @@ package com.marketi.entidades;
 
 
 public class Produto {
-    static int idGenerator = 0;
-    int id;
+    String id;
     String marca, modelo, lote;
     double preco;
 
     public Produto(
+        String id,
         String marca, 
         String modelo, 
         String lote, 
         double precoBase
     ) {
-        this.id = idGenerator;
+        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.lote = lote;
         this.preco = precoBase;
-        idGenerator++;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getMarca() {
