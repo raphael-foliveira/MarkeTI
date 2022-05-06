@@ -1,5 +1,19 @@
 package com.marketi.menus;
 
-public class MenuSwing {
+import javax.swing.*;
+
+public class MenuSwing implements Menu {
+
+    @Override
+    public void mostrarMenu() {
+        
+    }
+
+    @Override
+    public int lerSelecao() {
+        return 0;
+    }
+
+    
     
 }
