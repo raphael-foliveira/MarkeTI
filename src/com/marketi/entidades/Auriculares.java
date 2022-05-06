@@ -5,17 +5,17 @@ public class Auriculares extends Produto {
     int impedancia, tamanhoDriver, sensibilidade;
     String conector;
 
-    Auriculares(String id, 
-                String marca, 
-                String modelo, 
-                String lote, 
-                double precoBase, 
-                double desconto,
-                int impedancia,
-                int tamanhoDriver,
-                int sensibilidade,
-                String conector) {
-        super(id, marca, modelo, lote, precoBase, desconto);
+    public Auriculares( 
+        String marca, 
+        String modelo, 
+        String lote, 
+        double preco, 
+        int impedancia,
+        int tamanhoDriver,
+        int sensibilidade,
+        String conector
+    ) {
+        super(marca, modelo, lote, preco);
         this.impedancia = impedancia;
         this.tamanhoDriver = tamanhoDriver;
         this.sensibilidade = sensibilidade;

@@ -4,16 +4,16 @@ public class Computador extends Produto{
     int memoriaRam, armazenamento;
     String sistemaOperacional;
 
-    Computador(String id, 
-                String marca, 
-                String modelo, 
-                String lote, 
-                double precoBase, 
-                double desconto,
-                int memoriaRam,
-                int armazenamento,
-                String sistemaOperacional) {
-        super(id, marca, modelo, lote, precoBase, desconto);
+    public Computador(
+        String marca, 
+        String modelo, 
+        String lote, 
+        double preco, 
+        int memoriaRam,
+        int armazenamento,
+        String sistemaOperacional
+    ) {
+        super(marca, modelo, lote, preco);
         this.memoriaRam = memoriaRam;
         this.armazenamento = armazenamento;
         this.sistemaOperacional = sistemaOperacional;

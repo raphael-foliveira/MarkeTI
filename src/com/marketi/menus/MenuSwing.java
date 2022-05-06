@@ -6,12 +6,12 @@ public class MenuSwing implements Menu {
 
     @Override
     public void mostrarMenu() {
-        
+        throw new UnsupportedOperationException();
     }
-
+    
     @Override
     public int lerSelecao() {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 
     
