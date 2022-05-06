@@ -5,6 +5,7 @@ public class Computador extends Produto{
     String sistemaOperacional;
 
     public Computador(
+        String id,
         String marca, 
         String modelo, 
         String lote, 
@@ -13,7 +14,7 @@ public class Computador extends Produto{
         int armazenamento,
         String sistemaOperacional
     ) {
-        super(marca, modelo, lote, preco);
+        super(id, marca, modelo, lote, preco);
         this.memoriaRam = memoriaRam;
         this.armazenamento = armazenamento;
         this.sistemaOperacional = sistemaOperacional;
