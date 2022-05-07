@@ -21,19 +21,16 @@ public class Monitor extends Produto {
         this.taxaDeAtualizacao = taxaDeAtualizacao;
         this.resolucao = resolucao;
         this.tipoDeTela = tipoDeTela;
+        this.categoria = "Monitores";
     }
 
     @Override
     public String toString() {
         return String.format(
-            "%nId: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%nTamanho: %d%nTaxa de Atualização(Hz): %d%nResolução: %s%n", 
-            this.id, 
-            this.marca, 
-            this.modelo, 
-            this.preco, 
-            this.lote,
+            super.toString() + "Taxa de Atualização(Hz): %s%nResolução: %s%nTipo de Tela: %s%n",
             this.taxaDeAtualizacao,
-            this.resolucao
+            this.resolucao,
+            this.tipoDeTela
             );
     }
 

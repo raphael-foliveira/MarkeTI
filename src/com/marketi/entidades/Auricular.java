@@ -19,16 +19,13 @@ public class Auricular extends Produto {
         this.impedancia = impedancia;
         this.sensibilidade = sensibilidade;
         this.conector = conector;
+        this.categoria = "Auriculares";
     }
 
+    @Override
     public String toString() {
         return String.format(
-            "%nId: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%nImpedância(Ohms): %d%nSensibilidade(dB): %d%nConector: %s%n", 
-            this.id, 
-            this.marca, 
-            this.modelo, 
-            this.preco, 
-            this.lote,
+            super.toString() + "Impedância(Ohms): %d%nSensibilidade(dB): %d%nConector: %s%n",
             this.impedancia,
             this.sensibilidade,
             this.conector

@@ -40,7 +40,9 @@ public class Catalogo {
 
     public void imprimir(){
         for (Produto produto : this.produtos){
+            System.out.println("----------------------------------------");
             System.out.println(produto);
+            System.out.println("----------------------------------------");
         }
     }
 }

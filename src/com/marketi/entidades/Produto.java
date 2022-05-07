@@ -3,6 +3,7 @@ package com.marketi.entidades;
 
 public class Produto {
     final String id, marca, modelo, lote;
+    String categoria;
     double preco;
 
     public Produto(
@@ -17,6 +18,7 @@ public class Produto {
         this.modelo = modelo;
         this.lote = lote;
         this.preco = preco;
+        this.categoria = "Diversos";
     }
 
     public String getId() {
@@ -46,8 +48,9 @@ public class Produto {
     @Override
     public String toString() {
         return String.format(
-            "%nId: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n", 
+            "%nId: %s%nCategoria: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n", 
             this.id, 
+            this.categoria,
             this.marca, 
             this.modelo, 
             this.preco, 

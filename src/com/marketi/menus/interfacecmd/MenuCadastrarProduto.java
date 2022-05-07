@@ -61,7 +61,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarComputador(){
-        System.out.println("Cadastrando produto genérico");
+        System.out.println("Cadastrando computador");
         String id = this.menu.lerString("Id: ");
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
@@ -74,7 +74,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarMonitor(){
-        System.out.println("Cadastrando produto genérico");
+        System.out.println("Cadastrando monitor");
         String id = this.menu.lerString("Id: ");
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
@@ -88,7 +88,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarAuricular(){
-        System.out.println("Cadastrando produto genérico");
+        System.out.println("Cadastrando auricular");
         String id = this.menu.lerString("Id: ");
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");

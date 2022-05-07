@@ -18,21 +18,16 @@ public class Computador extends Produto{
         this.memoriaRam = memoriaRam;
         this.armazenamento = armazenamento;
         this.sistemaOperacional = sistemaOperacional;
+        this.categoria = "Computadores";
     }
 
     @Override
     public String toString() {
         return String.format(
-            "%nId: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%nRAM: %d%nArmazenamento(GB): %d%nSistema Operacional: %s%n", 
-            this.id, 
-            this.marca, 
-            this.modelo, 
-            this.preco, 
-            this.lote,
+            super.toString() + "RAM: %d%nArmazenamento(GB): %d%nSistema Operacional: %s%n", 
             this.memoriaRam,
             this.armazenamento,
             this.sistemaOperacional
             );
     }
-
 }
