@@ -28,8 +28,12 @@ public class MenuPrincipal extends MenuCmd {
                 menuCadastro.executar();
                 break;
             case 3:
+                String idDoProdutoASerRemovido = lerString("Digite o id do produto: ");
+                
+                catalogo.remover(idDoProdutoASerRemovido);
                 break;
             case 4:
+
                 break;
             case 5:
                 System.out.println("Até logo!");
