@@ -2,7 +2,6 @@ package com.marketi.ui.interfacecmd;
 
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public class UISelecaoCmd extends UICmd {
 
@@ -10,6 +9,7 @@ public class UISelecaoCmd extends UICmd {
     private List<String> opcoes;
 
     public UISelecaoCmd(String titulo, List<String> opcoes) {
+        super();
         this.titulo = titulo;
         this.opcoes = opcoes;
     }
@@ -24,7 +24,6 @@ public class UISelecaoCmd extends UICmd {
 
     public int lerSelecao() {
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
-        Scanner scanner = new Scanner(System.in);
 
         try {
             System.out.print(">>> ");
