@@ -2,8 +2,8 @@ package com.marketi.entidades;
 
 public class Monitor extends Produto {
 
-    int tamanho, taxaDeAtualizacao;
-    String resolucao, tipoDeTela;
+    final int tamanho, taxaDeAtualizacao;
+    final String resolucao, tipoDeTela;
 
     public Monitor(
         String id,

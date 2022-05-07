@@ -2,7 +2,7 @@ package com.marketi.entidades;
 
 
 public class Produto {
-    String id, marca, modelo, lote;
+    final String id, marca, modelo, lote;
     double preco;
 
     public Produto(

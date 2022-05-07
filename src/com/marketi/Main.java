@@ -1,11 +1,10 @@
 package com.marketi;
 
 import com.marketi.armazenamento.Catalogo;
-import com.marketi.menus.menuscmd.MenuPrincipal;
+import com.marketi.controle.ControladorPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        MenuPrincipal menuPrincipal = new MenuPrincipal(new Catalogo());
-        menuPrincipal.executar();
-}
+        
+    }
 }

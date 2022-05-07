@@ -1,8 +1,8 @@
 package com.marketi.entidades;
 
 public class Computador extends Produto{
-    int memoriaRam, armazenamento;
-    String sistemaOperacional;
+    final int memoriaRam, armazenamento;
+    final String sistemaOperacional;
 
     public Computador(
         String id,
