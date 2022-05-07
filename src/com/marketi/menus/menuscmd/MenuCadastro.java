@@ -3,9 +3,10 @@ package com.marketi.menus.menuscmd;
 import java.util.ArrayList;
 
 import com.marketi.armazenamento.Catalogo;
+import com.marketi.entidades.Auricular;
 import com.marketi.entidades.Computador;
+import com.marketi.entidades.Monitor;
 import com.marketi.entidades.Produto;
-import com.marketi.menus.MenuCmd;
 
 public class MenuCadastro extends MenuCmd {
     
@@ -30,8 +31,10 @@ public class MenuCadastro extends MenuCmd {
                 cadastrarComputador();
                 break;
             case 3:
+                cadastrarMonitor();
                 break;
             case 4:
+                cadastrarAuricular();
                 break;
             case 5:
                 MenuPrincipal menuPrincipal = new MenuPrincipal(catalogo);
@@ -73,8 +76,12 @@ public class MenuCadastro extends MenuCmd {
         String modelo = lerString("Modelo: ");
         String lote = lerString("Lote: ");
         double preco = lerDouble("Preco: ");
-        Produto novoProduto = new Produto(id, marca, modelo, lote, preco);
-        catalogo.adicionar(novoProduto);
+        int tamanho = lerInt("Tamanho (polegadas): "); 
+        int taxaDeAtualizacao = lerInt("Taxa de atualização(Hz): ");
+        String resolucao = lerString("Resolução: "); 
+        String tipoDeTela = lerString("Tipo de tela: ");
+        Monitor novoMonitor = new Monitor(id, marca, modelo, lote, preco, tamanho, taxaDeAtualizacao, resolucao, tipoDeTela);
+        catalogo.adicionar(novoMonitor);
     }
     
     private void cadastrarAuricular(){
@@ -84,7 +91,10 @@ public class MenuCadastro extends MenuCmd {
         String modelo = lerString("Modelo: ");
         String lote = lerString("Lote: ");
         double preco = lerDouble("Preco: ");
-        Produto novoProduto = new Produto(id, marca, modelo, lote, preco);
-        catalogo.adicionar(novoProduto);
+        int impedancia = lerInt("Impedância (Ohms): ");
+        int sensibilidade = lerInt("Sensibilidade(dB): ");
+        String conector = lerString("Conector");
+        Auricular novoAuricular = new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conector);
+        catalogo.adicionar(novoAuricular);
     }
 }

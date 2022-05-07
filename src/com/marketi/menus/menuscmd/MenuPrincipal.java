@@ -3,7 +3,6 @@ package com.marketi.menus.menuscmd;
 import java.util.ArrayList;
 
 import com.marketi.armazenamento.Catalogo;
-import com.marketi.menus.MenuCmd;
 
 public class MenuPrincipal extends MenuCmd {
     

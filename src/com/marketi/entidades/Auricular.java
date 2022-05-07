@@ -12,15 +12,27 @@ public class Auricular extends Produto {
         String lote, 
         double preco, 
         int impedancia,
-        int tamanhoDriver,
         int sensibilidade,
         String conector
     ) {
         super(id, marca, modelo, lote, preco);
         this.impedancia = impedancia;
-        this.tamanhoDriver = tamanhoDriver;
         this.sensibilidade = sensibilidade;
         this.conector = conector;
+    }
+
+    public String toString() {
+        return String.format(
+            "%nId: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%nImpedância(Ohms): %d%nSensibilidade(dB): %d%nConector: %s%n", 
+            this.id, 
+            this.marca, 
+            this.modelo, 
+            this.preco, 
+            this.lote,
+            this.impedancia,
+            this.sensibilidade,
+            this.conector
+            );
     }
 
 }

@@ -1,10 +1,12 @@
 package com.marketi.armazenamento;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import com.marketi.entidades.*;
 
 public class Catalogo {
-    ArrayList<Produto> produtos;
+    List<Produto> produtos;
 
     public Catalogo(){
         produtos = new ArrayList<Produto>();
@@ -32,6 +34,4 @@ public class Catalogo {
             System.out.println(produto);
         }
     }
-
-    
 }
