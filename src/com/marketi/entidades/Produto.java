@@ -18,8 +18,6 @@ public class Produto {
         this.lote = lote;
         this.preco = preco;
     }
-    
-    
 
     public String getId() {
         return id;
@@ -71,8 +69,11 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto [marca=" + marca + ", modelo=" + modelo + ", preco=" + preco + "]";
+        return "Produto [id=" + id + ", lote=" + lote + ", marca=" + marca + ", modelo=" + modelo + ", preco=" + preco
+                + "]";
     }
+
+    
 
     
 
