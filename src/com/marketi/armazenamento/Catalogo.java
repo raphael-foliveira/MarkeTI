@@ -29,6 +29,15 @@ public class Catalogo {
         }
     }
 
+    public Produto encontrarProduto(String id){
+        for (Produto produto : produtos) {
+            if (produto.getId().equals(id)){
+                return produto;
+            }
+        }
+        return null;
+    }
+
     public void imprimir(){
         for (Produto produto : this.produtos){
             System.out.println(produto);

@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class InterfaceMenuCmd extends InterfaceCmd{
+public class UISelecaoCmd extends UICmd {
 
     private String titulo;
     private List<String> opcoes;
 
-    public InterfaceMenuCmd(String titulo, List<String> opcoes) {
+    public UISelecaoCmd(String titulo, List<String> opcoes) {
         this.titulo = titulo;
         this.opcoes = opcoes;
     }
@@ -25,14 +25,14 @@ public class InterfaceMenuCmd extends InterfaceCmd{
 
     public int lerSelecao(){
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print(">>> ");
+
         try{
+            System.out.print(">>> ");
             // tentando ler um número
             int selecao = scanner.nextInt();
-            if (selecao < opcoes.size() && 0 < selecao) {
-                // se o valor for válido (entre 1 e 4), retorna o valor
+            if (selecao <= opcoes.size() && 0 < selecao) {
+                // se o valor for válido (correspondente ao número de opções do menu), retorna o valor
                 return selecao;
             } else {
                 // caso não exista opção no menu para o valor selecionado, retorna a própria função
@@ -45,8 +45,6 @@ public class InterfaceMenuCmd extends InterfaceCmd{
          System.out.println("Comando inválido, tente novamente");
             mostrarOpcoes();
             return lerSelecao();
-        } finally {
-            scanner.close();
-        }
+        } 
     }
 }
