@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public abstract class MenuCmd implements Menu{
+import com.marketi.armazenamento.Catalogo;
+
+public abstract class MenuCmd{
     // Classe abstrata responsável por parte da implementação do menu do terminal
-    protected String nome;
+    protected String titulo;
     protected ArrayList<String> opcoes;
+    protected Catalogo catalogo;
+
+    public MenuCmd(Catalogo catalogo) {
+        this.catalogo = catalogo;
+    }
     
     public int pegarSelecaoUsuario(){
         // Método utilizado para imprimir o menu e pegar a seleção do usuário
@@ -19,17 +26,15 @@ public abstract class MenuCmd implements Menu{
         
     }
 
-    @Override
     public void mostrarMenu(){
         // Método responsável pela impressão do menu no terminal
 
-        System.out.println(this.nome);
+        System.out.println(this.titulo);
         for (String opcao : opcoes) {
             System.out.println(opcao);
         }
     }
 
-    @Override
     public int lerSelecao(){
         // Método responsável pela leitura da entrada do usuário (opção escolhida)
 
@@ -39,7 +44,7 @@ public abstract class MenuCmd implements Menu{
             try{
                 // tentando ler um número
                 int selecao = scanner.nextInt();
-                if (selecao < 5 && 0 < selecao) {
+                if (selecao < opcoes.size() && 0 < selecao) {
                     // se o valor for válido (entre 1 e 4), retorna o valor
                     return selecao;
                 } else {
@@ -53,13 +58,43 @@ public abstract class MenuCmd implements Menu{
                 // tratamos o erro e invocamos o método novamente
 
                 System.out.println("Comando inválido, tente novamente");
-                System.out.println(this.opcoes);
+                mostrarMenu();
                 return lerSelecao();
             }
         }
     }
 
+    public String lerString(String mensagem){
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print(mensagem);
+            String resposta = scanner.nextLine();
+            return resposta;
+        }
+    }
 
+    public int lerInt(String mensagem){
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print(mensagem);
+            try{
+                int resposta = scanner.nextInt();
+                return resposta;
+            } catch (InputMismatchException e) {
+                System.out.println("Esse valor deve ser um número inteiro");
+                return lerInt(mensagem);
+            }
+        }
+    }
 
-
+    public double lerDouble(String mensagem){
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println(mensagem);
+            try{
+                double resposta = scanner.nextDouble();
+                return resposta;
+            } catch (InputMismatchException e) {
+                System.out.println("Esse valor deve ser um número");
+                return lerDouble(mensagem);
+            }
+        }
+    }
 }

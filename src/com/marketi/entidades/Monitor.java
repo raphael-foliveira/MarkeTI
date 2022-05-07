@@ -23,4 +23,15 @@ public class Monitor extends Produto {
         this.tipoDeTela = tipoDeTela;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+            "%nId: %s%nMarca: %s%n Modelo: %s%n Preço: %.2f%n Lote: %s%nTamanho: %d%n, Taxa de Atualização(Hz): %d%nResolução: %s%n", 
+            this.id, 
+            this.marca, 
+            this.modelo, 
+            this.preco, 
+            this.lote);
+        }
+
 }

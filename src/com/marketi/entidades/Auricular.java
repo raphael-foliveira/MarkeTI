@@ -1,11 +1,11 @@
 package com.marketi.entidades;
 
-public class Auriculares extends Produto {
+public class Auricular extends Produto {
 
     int impedancia, tamanhoDriver, sensibilidade;
     String conector;
 
-    public Auriculares( 
+    public Auricular( 
         String id,
         String marca, 
         String modelo,

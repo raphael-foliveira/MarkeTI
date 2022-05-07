@@ -6,19 +6,19 @@ import com.marketi.entidades.*;
 public class Catalogo {
     ArrayList<Produto> produtos;
 
-    Catalogo(){
+    public Catalogo(){
         produtos = new ArrayList<Produto>();
     }
 
-    protected void adicionar(Produto produto){
+    public void adicionar(Produto produto){
         produtos.add(produto);
     }
 
-    protected void remover(Produto produto){
+    public void remover(Produto produto){
         produtos.remove(produto);
     }
 
-    protected void remover(String id) {
+    public void remover(String id) {
         for (Produto produto : produtos) {
             if (produto.getId().equals(id)){
                 produtos.remove(produto);
@@ -27,9 +27,10 @@ public class Catalogo {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Catalogo [produtos=" + produtos + "]";
+    public void imprimir(){
+        for (Produto produto : this.produtos){
+            System.out.println(produto);
+        }
     }
 
     
