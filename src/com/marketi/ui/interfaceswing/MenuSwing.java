@@ -1,4 +1,4 @@
-package com.marketi.menus;
+package com.marketi.ui.interfaceswing;
 
 public class MenuSwing {
 

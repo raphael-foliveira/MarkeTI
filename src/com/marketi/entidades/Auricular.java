@@ -3,7 +3,7 @@ package com.marketi.entidades;
 public class Auricular extends Produto {
 
     final int impedancia, sensibilidade;
-    final String conector;
+    final String conexao;
 
     public Auricular(
             String id,
@@ -13,11 +13,11 @@ public class Auricular extends Produto {
             double preco,
             int impedancia,
             int sensibilidade,
-            String conector) {
+            String conexao) {
         super(id, marca, modelo, lote, preco);
         this.impedancia = impedancia;
         this.sensibilidade = sensibilidade;
-        this.conector = conector;
+        this.conexao = conexao;
         this.categoria = "Auriculares";
     }
 
@@ -27,7 +27,7 @@ public class Auricular extends Produto {
                 super.toString() + "Impedância(Ohms): %d%nSensibilidade(dB): %d%nConector: %s%n",
                 this.impedancia,
                 this.sensibilidade,
-                this.conector);
+                this.conexao);
     }
 
 }

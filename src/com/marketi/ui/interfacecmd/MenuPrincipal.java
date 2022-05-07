@@ -1,4 +1,4 @@
-package com.marketi.menus.interfacecmd;
+package com.marketi.ui.interfacecmd;
 
 import java.util.Arrays;
 
@@ -56,7 +56,10 @@ public class MenuPrincipal {
 
     public void removerProduto() {
         String idDoProduto = this.menu.lerString("Digite o id do produto: ");
-        this.catalogo.remover(idDoProduto);
+        boolean removido = this.catalogo.remover(idDoProduto);
+        if (!removido) {
+            System.out.println("Produto não encontrado");
+        }
     }
 
     public void mudarPreco() {

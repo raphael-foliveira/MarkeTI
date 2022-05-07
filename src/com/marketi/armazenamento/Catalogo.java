@@ -10,23 +10,90 @@ public class Catalogo {
 
     public Catalogo() {
         produtos = new ArrayList<Produto>();
+
+        // adicionando produtos para preencher a lista e demonstrar o funcionamento do
+        // sistema
+        adicionar(
+                new Produto(
+                        "1",
+                        "Zowie",
+                        "Ec2A",
+                        "10",
+                        399));
+        adicionar(
+                new Computador(
+                        "2",
+                        "Dell",
+                        "Onyx",
+                        "155vx",
+                        4900,
+                        16,
+                        512,
+                        "Windows"));
+        adicionar(
+                new Auricular(
+                        "3",
+                        "JBL",
+                        "125BT",
+                        "KGBUX",
+                        150,
+                        220,
+                        100,
+                        "Bluetooth"));
+        adicionar(
+                new Monitor(
+                        "4",
+                        "Acer",
+                        "VA270H",
+                        "A1098",
+                        1800,
+                        29,
+                        144,
+                        "1920x1080",
+                        "LED"));
+        adicionar(
+                new Produto(
+                        "5",
+                        "GFallen",
+                        "Falcão Peregrino",
+                        "GF21983",
+                        399));
+        adicionar(
+                new Computador(
+                        "6",
+                        "Apple",
+                        "Macbook Pro",
+                        "AAP298342893",
+                        23000,
+                        16,
+                        1000,
+                        "OSX"));
+        adicionar(
+                new Auricular(
+                        "7",
+                        "Razer",
+                        "Kraken",
+                        "RK21983747",
+                        680,
+                        180,
+                        110,
+                        "USB"));
     }
 
     public void adicionar(Produto produto) {
+        // adiciona um produto
         produtos.add(produto);
     }
 
-    public void remover(Produto produto) {
-        produtos.remove(produto);
-    }
-
-    public void remover(String id) {
-        for (Produto produto : produtos) {
-            if (produto.getId().equals(id)) {
-                produtos.remove(produto);
-                return;
-            }
+    public boolean remover(String id) {
+        // remove um produto caso ele exista
+        // retorna false se o produto não for encontrado
+        Produto produto = encontrarProduto(id);
+        if (produto == null) {
+            return false;
         }
+        produtos.remove(produto);
+        return true;
     }
 
     public Produto encontrarProduto(String id) {
@@ -36,15 +103,6 @@ public class Catalogo {
             }
         }
         return null;
-    }
-
-    public boolean verificarExistenciaDeId(String id) {
-        for (Produto produto : produtos) {
-            if (produto.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public String toString() {

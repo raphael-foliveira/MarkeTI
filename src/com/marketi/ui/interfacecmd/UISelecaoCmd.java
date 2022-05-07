@@ -1,4 +1,4 @@
-package com.marketi.menus.interfacecmd;
+package com.marketi.ui.interfacecmd;
 
 import java.util.InputMismatchException;
 import java.util.List;

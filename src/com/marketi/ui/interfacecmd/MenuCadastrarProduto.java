@@ -1,4 +1,4 @@
-package com.marketi.menus.interfacecmd;
+package com.marketi.ui.interfacecmd;
 
 import java.util.Arrays;
 
@@ -103,7 +103,7 @@ public class MenuCadastrarProduto {
     public String lerNovoId() {
         // Evita que IDs repetidos sejam cadastrados
         String id = this.menu.lerString("Id: ");
-        while (catalogo.verificarExistenciaDeId(id)) {
+        while (catalogo.encontrarProduto(id) != null) {
             System.out.println("Id já cadastrado. Tente novamente.");
             id = this.menu.lerString("Id: ");
         }
