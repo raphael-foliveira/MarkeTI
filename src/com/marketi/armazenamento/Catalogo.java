@@ -97,6 +97,8 @@ public class Catalogo {
     }
 
     public Produto encontrarProduto(String id) {
+        // encontra um produto no catálogo baseado no seu id e o retorna, caso ele
+        // exista
         for (Produto produto : produtos) {
             if (produto.getId().equals(id)) {
                 return produto;

@@ -27,9 +27,9 @@ public class Monitor extends Produto {
     public String toString() {
         return String.format(
                 super.toString() + "Taxa de Atualização(Hz): %s%nResolução: %s%nTipo de Tela: %s%n",
-                this.taxaDeAtualizacao,
-                this.resolucao,
-                this.tipoDeTela);
+                taxaDeAtualizacao,
+                resolucao,
+                tipoDeTela);
     }
 
 }

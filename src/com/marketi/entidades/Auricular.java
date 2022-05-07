@@ -25,9 +25,9 @@ public class Auricular extends Produto {
     public String toString() {
         return String.format(
                 super.toString() + "Impedância(Ohms): %d%nSensibilidade(dB): %d%nConector: %s%n",
-                this.impedancia,
-                this.sensibilidade,
-                this.conexao);
+                impedancia,
+                sensibilidade,
+                conexao);
     }
 
 }

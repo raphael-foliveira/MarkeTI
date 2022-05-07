@@ -22,10 +22,10 @@ public class MenuPrincipal {
                         "5) Sair"));
     }
 
-    public void executar() {
+    public Object executar() {
 
-        this.menu.mostrarOpcoes();
-        int opcao = this.menu.lerSelecao();
+        menu.mostrarOpcoes();
+        int opcao = menu.lerSelecao();
         switch (opcao) {
             case 1:
                 cadastrarProduto();
@@ -46,32 +46,39 @@ public class MenuPrincipal {
             default:
                 break;
         }
-        this.executar();
+        return executar();
     }
 
     public void cadastrarProduto() {
+        // Cria e executa um menu de cadastro para interação com o usuário
         MenuCadastrarProduto menuCadastro = new MenuCadastrarProduto(this.catalogo);
         menuCadastro.executar();
     }
 
     public void removerProduto() {
-        String idDoProduto = this.menu.lerString("Digite o id do produto: ");
-        boolean removido = this.catalogo.remover(idDoProduto);
+        // recebe um id do usuário para remoção do produto do catálogo, caso exista
+        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        boolean removido = catalogo.remover(idDoProduto);
         if (!removido) {
             System.out.println("Produto não encontrado");
         }
     }
 
     public void mudarPreco() {
-        String idDoProduto = this.menu.lerString("Digite o id do produto: ");
-        Produto produtoSelecionado = this.catalogo.encontrarProduto(idDoProduto);
+        // recebe do usuário um id e um valor
+        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        Produto produtoSelecionado = catalogo.encontrarProduto(idDoProduto);
+        if (produtoSelecionado == null) {
+            System.out.println("Produto não encontrado");
+            return;
+        }
         String marca = produtoSelecionado.getMarca();
         String modelo = produtoSelecionado.getModelo();
         double precoAtual = produtoSelecionado.getPreco();
         System.out.printf("Marca: %s%n", marca);
         System.out.printf("Modelo: %s%n", modelo);
         System.out.printf("Preço Atual: %.2f%n", precoAtual);
-        double novoPreco = this.menu.lerDouble("Digite o novo preço: ");
+        double novoPreco = menu.lerDouble("Digite o novo preço: ");
         produtoSelecionado.setPreco(novoPreco);
     }
 

@@ -24,8 +24,8 @@ public class Computador extends Produto {
     public String toString() {
         return String.format(
                 super.toString() + "RAM: %d%nArmazenamento(GB): %d%nSistema Operacional: %s%n",
-                this.memoriaRam,
-                this.armazenamento,
-                this.sistemaOperacional);
+                memoriaRam,
+                armazenamento,
+                sistemaOperacional);
     }
 }

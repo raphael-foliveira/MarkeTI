@@ -47,12 +47,12 @@ public class Produto {
     public String toString() {
         return String.format(
                 "%nId: %s%nCategoria: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n",
-                this.id,
-                this.categoria,
-                this.marca,
-                this.modelo,
-                this.preco,
-                this.lote);
+                id,
+                categoria,
+                marca,
+                modelo,
+                preco,
+                lote);
     }
 
 }
