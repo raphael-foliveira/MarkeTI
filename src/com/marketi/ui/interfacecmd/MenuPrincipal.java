@@ -23,7 +23,7 @@ public class MenuPrincipal {
     }
 
     public Object executar() {
-
+        // Executa o menu e executa o método referente à opção escolhida pelo usuário
         menu.mostrarOpcoes();
         int opcao = menu.lerSelecao();
         switch (opcao) {
@@ -65,24 +65,25 @@ public class MenuPrincipal {
     }
 
     public void mudarPreco() {
-        // recebe do usuário um id e um valor
+        // recebe do usuário um id para buscar um produto
         String idDoProduto = menu.lerString("Digite o id do produto: ");
         Produto produtoSelecionado = catalogo.encontrarProduto(idDoProduto);
         if (produtoSelecionado == null) {
+            // Checa se o produto selecionado pelo usuário existe. Caso não exista, a
+            // execução da função é interrompida
             System.out.println("Produto não encontrado");
             return;
         }
-        String marca = produtoSelecionado.getMarca();
-        String modelo = produtoSelecionado.getModelo();
-        double precoAtual = produtoSelecionado.getPreco();
-        System.out.printf("Marca: %s%n", marca);
-        System.out.printf("Modelo: %s%n", modelo);
-        System.out.printf("Preço Atual: %.2f%n", precoAtual);
+        // Imprime informações básicas do produto e seu preço
+        System.out.printf("Marca: %s%n", produtoSelecionado.getMarca());
+        System.out.printf("Modelo: %s%n", produtoSelecionado.getModelo());
+        System.out.printf("Preço Atual: %.2f%n", produtoSelecionado.getPreco());
         double novoPreco = menu.lerDouble("Digite o novo preço: ");
         produtoSelecionado.setPreco(novoPreco);
     }
 
     public void imprimirCatalogo() {
+        // Imprime todo o catálogo
         System.out.println(catalogo);
     }
 
