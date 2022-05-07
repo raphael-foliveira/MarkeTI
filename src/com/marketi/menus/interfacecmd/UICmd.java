@@ -3,19 +3,19 @@ package com.marketi.menus.interfacecmd;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UICmd {
-    
-    public String lerString(String mensagem){
+public abstract class UICmd {
+
+    public String lerString(String mensagem) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(mensagem);
         String resposta = scanner.nextLine();
         return resposta;
     }
 
-    public int lerInt(String mensagem){
+    public int lerInt(String mensagem) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(mensagem);
-        try{
+        try {
             int resposta = scanner.nextInt();
             return resposta;
         } catch (InputMismatchException e) {
@@ -24,10 +24,10 @@ public class UICmd {
         }
     }
 
-    public double lerDouble(String mensagem){
-        Scanner scanner = new Scanner(System.in); 
+    public double lerDouble(String mensagem) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println(mensagem);
-        try{
+        try {
             double resposta = scanner.nextDouble();
             return resposta;
         } catch (InputMismatchException e) {
@@ -35,5 +35,4 @@ public class UICmd {
             return lerDouble(mensagem);
         }
     }
-
 }

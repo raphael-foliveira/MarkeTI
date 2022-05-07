@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class UISelecaoCmd extends UICmd {
 
     private String titulo;
@@ -15,7 +14,7 @@ public class UISelecaoCmd extends UICmd {
         this.opcoes = opcoes;
     }
 
-    public void mostrarOpcoes(){
+    public void mostrarOpcoes() {
         // Método responsável pela impressão do menu no terminal
         System.out.println(this.titulo);
         for (String opcao : opcoes) {
@@ -23,28 +22,30 @@ public class UISelecaoCmd extends UICmd {
         }
     }
 
-    public int lerSelecao(){
+    public int lerSelecao() {
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
         Scanner scanner = new Scanner(System.in);
 
-        try{
+        try {
             System.out.print(">>> ");
             // tentando ler um número
             int selecao = scanner.nextInt();
             if (selecao <= opcoes.size() && 0 < selecao) {
-                // se o valor for válido (correspondente ao número de opções do menu), retorna o valor
+                // se o valor for válido (correspondente ao número de opções do menu), retorna o
+                // valor
                 return selecao;
             } else {
-                // caso não exista opção no menu para o valor selecionado, retorna a própria função
+                // caso não exista opção no menu para o valor selecionado, retorna a própria
+                // função
                 System.out.println("Comando inválido, tente novamente");
                 return lerSelecao();
             }
-        } catch (InputMismatchException e){
-            // Caso um não-número seja fornecido como entrada, 
+        } catch (InputMismatchException e) {
+            // Caso um não-número seja fornecido como entrada,
             // tratamos o erro e invocamos o método novamente
-         System.out.println("Comando inválido, tente novamente");
+            System.out.println("Comando inválido, tente novamente");
             mostrarOpcoes();
             return lerSelecao();
-        } 
+        }
     }
 }

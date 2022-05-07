@@ -6,25 +6,23 @@ import com.marketi.armazenamento.Catalogo;
 import com.marketi.entidades.Produto;
 
 public class MenuPrincipal {
-    
+
     UISelecaoCmd menu;
     Catalogo catalogo;
 
-    public MenuPrincipal(Catalogo catalogo){
+    public MenuPrincipal(Catalogo catalogo) {
         this.catalogo = catalogo;
         this.menu = new UISelecaoCmd(
-            "Menu Principal", 
-            Arrays.asList(
-                "1) Cadastrar novo produto",
-                "2) Remover produto",
-                "3) Visualizar catálogo",
-                "4) Editar preço de produto",
-                "5) Sair"
-                )
-            );
+                "Menu Principal",
+                Arrays.asList(
+                        "1) Cadastrar novo produto",
+                        "2) Remover produto",
+                        "3) Visualizar catálogo",
+                        "4) Editar preço de produto",
+                        "5) Sair"));
     }
 
-    public void executar(){
+    public void executar() {
 
         this.menu.mostrarOpcoes();
         int opcao = this.menu.lerSelecao();
@@ -36,7 +34,7 @@ public class MenuPrincipal {
                 removerProduto();
                 break;
             case 3:
-                this.catalogo.imprimir();
+                imprimirCatalogo();
                 break;
             case 4:
                 mudarPreco();
@@ -51,17 +49,17 @@ public class MenuPrincipal {
         this.executar();
     }
 
-    public void cadastrarProduto(){
+    public void cadastrarProduto() {
         MenuCadastrarProduto menuCadastro = new MenuCadastrarProduto(this.catalogo);
         menuCadastro.executar();
     }
 
-    public void removerProduto(){
+    public void removerProduto() {
         String idDoProduto = this.menu.lerString("Digite o id do produto: ");
         this.catalogo.remover(idDoProduto);
     }
 
-    public void mudarPreco(){
+    public void mudarPreco() {
         String idDoProduto = this.menu.lerString("Digite o id do produto: ");
         Produto produtoSelecionado = this.catalogo.encontrarProduto(idDoProduto);
         String marca = produtoSelecionado.getMarca();
@@ -72,6 +70,10 @@ public class MenuPrincipal {
         System.out.printf("Preço Atual: %.2f%n", precoAtual);
         double novoPreco = this.menu.lerDouble("Digite o novo preço: ");
         produtoSelecionado.setPreco(novoPreco);
+    }
+
+    public void imprimirCatalogo() {
+        System.out.println(catalogo);
     }
 
 }

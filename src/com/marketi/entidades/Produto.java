@@ -1,18 +1,16 @@
 package com.marketi.entidades;
 
-
 public class Produto {
     final String id, marca, modelo, lote;
     String categoria;
     double preco;
 
     public Produto(
-        String id,
-        String marca, 
-        String modelo,
-        String lote, 
-        double preco
-    ) {
+            String id,
+            String marca,
+            String modelo,
+            String lote,
+            double preco) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -48,18 +46,13 @@ public class Produto {
     @Override
     public String toString() {
         return String.format(
-            "%nId: %s%nCategoria: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n", 
-            this.id, 
-            this.categoria,
-            this.marca, 
-            this.modelo, 
-            this.preco, 
-            this.lote);
-        }
+                "%nId: %s%nCategoria: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n",
+                this.id,
+                this.categoria,
+                this.marca,
+                this.modelo,
+                this.preco,
+                this.lote);
+    }
 
-    
-
-    
-
-    
 }
