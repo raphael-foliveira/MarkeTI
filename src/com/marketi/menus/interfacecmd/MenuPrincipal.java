@@ -73,4 +73,5 @@ public class MenuPrincipal {
         double novoPreco = this.menu.lerDouble("Digite o novo preço: ");
         produtoSelecionado.setPreco(novoPreco);
     }
+
 }

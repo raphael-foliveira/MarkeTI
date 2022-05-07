@@ -52,7 +52,7 @@ public class MenuCadastrarProduto {
 
     public void cadastrarProduto(){
         System.out.println("Cadastrando produto genérico");
-        String id = this.menu.lerString("Id: ");
+        String id = lerNovoId();
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
         String lote = this.menu.lerString("Lote: "); 
@@ -62,7 +62,7 @@ public class MenuCadastrarProduto {
 
     public void cadastrarComputador(){
         System.out.println("Cadastrando computador");
-        String id = this.menu.lerString("Id: ");
+        String id = lerNovoId();
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
         String lote = this.menu.lerString("Lote: "); 
@@ -75,7 +75,7 @@ public class MenuCadastrarProduto {
 
     public void cadastrarMonitor(){
         System.out.println("Cadastrando monitor");
-        String id = this.menu.lerString("Id: ");
+        String id = lerNovoId();
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
         String lote = this.menu.lerString("Lote: "); 
@@ -89,7 +89,7 @@ public class MenuCadastrarProduto {
 
     public void cadastrarAuricular(){
         System.out.println("Cadastrando auricular");
-        String id = this.menu.lerString("Id: ");
+        String id = lerNovoId();
         String marca = this.menu.lerString("Marca: "); 
         String modelo = this.menu.lerString("Modelo: ");
         String lote = this.menu.lerString("Lote: "); 
@@ -98,6 +98,16 @@ public class MenuCadastrarProduto {
         int sensibilidade = this.menu.lerInt("Sensibilidade(dB): ");
         String conector = this.menu.lerString("Tipo de conector: ");
         this.catalogo.adicionar(new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conector));
+    }
+
+    public String lerNovoId(){
+        // Evita que IDs repetidos sejam cadastrados
+        String id = this.menu.lerString("Id: ");
+        while (catalogo.verificarExistenciaDeId(id)){
+            System.out.println("Id já cadastrado. Tente novamente.");
+            id = this.menu.lerString("Id: ");
+        }
+        return id;
     }
     
 }

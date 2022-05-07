@@ -45,4 +45,13 @@ public class Catalogo {
             System.out.println("----------------------------------------");
         }
     }
+
+    public boolean verificarExistenciaDeId(String id){
+        for (Produto produto : produtos){
+            if (produto.getId().equals(id)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
