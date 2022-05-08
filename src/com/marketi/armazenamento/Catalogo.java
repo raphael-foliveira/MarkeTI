@@ -10,7 +10,50 @@ public class Catalogo {
 
     public Catalogo() {
         produtos = new ArrayList<Produto>();
+    }
 
+    public void adicionar(Produto produto) {
+        // adiciona um produto
+        produtos.add(produto);
+    }
+
+    public boolean remover(String id) {
+        // remove um produto caso ele exista
+        // retorna false se o produto não for encontrado
+        Produto produto = encontrarProduto(id);
+        if (produto == null) {
+            return false;
+        }
+        produtos.remove(produto);
+        return true;
+    }
+
+    public Produto encontrarProduto(String id) {
+        // encontra um produto no catálogo baseado no seu id e o retorna, caso ele
+        // exista
+        for (Produto produto : produtos) {
+            if (produto.getId().equals(id)) {
+                return produto;
+            }
+        }
+        return null;
+    }
+
+    public String toString() {
+        // Utiliza um StringBuilder para adicionar todos os elementos do catálogo a uma
+        // String
+        StringBuilder builder = new StringBuilder();
+
+        for (Produto produto : this.produtos) {
+            // Cada produto é adicionado à string, sendo separado por linhas
+            builder.append("----------------------------------------");
+            builder.append(produto);
+            builder.append("----------------------------------------");
+        }
+        return builder.toString();
+    }
+
+    public void adicionarProdutosDemo() {
         // adicionando produtos para preencher a lista e demonstrar o funcionamento do
         // sistema
         adicionar(
@@ -78,47 +121,6 @@ public class Catalogo {
                         180,
                         110,
                         "USB"));
-    }
-
-    public void adicionar(Produto produto) {
-        // adiciona um produto
-        produtos.add(produto);
-    }
-
-    public boolean remover(String id) {
-        // remove um produto caso ele exista
-        // retorna false se o produto não for encontrado
-        Produto produto = encontrarProduto(id);
-        if (produto == null) {
-            return false;
-        }
-        produtos.remove(produto);
-        return true;
-    }
-
-    public Produto encontrarProduto(String id) {
-        // encontra um produto no catálogo baseado no seu id e o retorna, caso ele
-        // exista
-        for (Produto produto : produtos) {
-            if (produto.getId().equals(id)) {
-                return produto;
-            }
-        }
-        return null;
-    }
-
-    public String toString() {
-        // Utiliza um StringBuilder para adicionar todos os elementos do catálogo a uma
-        // String
-        StringBuilder builder = new StringBuilder();
-
-        for (Produto produto : this.produtos) {
-            // Cada produto é adicionado à string, sendo separado por linhas
-            builder.append("----------------------------------------");
-            builder.append(produto);
-            builder.append("----------------------------------------");
-        }
-        return builder.toString();
     }
 
 }
