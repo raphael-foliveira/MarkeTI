@@ -16,7 +16,7 @@ public class Produto {
         this.modelo = modelo;
         this.lote = lote;
         this.preco = preco;
-        this.categoria = "Diversos";
+        this.categoria = "Diverso";
     }
 
     public String getId() {

@@ -20,7 +20,7 @@ public class Monitor extends Produto {
         this.taxaDeAtualizacao = taxaDeAtualizacao;
         this.resolucao = resolucao;
         this.tipoDeTela = tipoDeTela;
-        this.categoria = "Monitores";
+        this.categoria = "Monitor";
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Computador extends Produto {
         this.memoriaRam = memoriaRam;
         this.armazenamento = armazenamento;
         this.sistemaOperacional = sistemaOperacional;
-        this.categoria = "Computadores";
+        this.categoria = "Computador";
     }
 
     @Override

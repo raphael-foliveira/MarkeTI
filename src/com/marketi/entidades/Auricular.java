@@ -18,7 +18,7 @@ public class Auricular extends Produto {
         this.impedancia = impedancia;
         this.sensibilidade = sensibilidade;
         this.conexao = conexao;
-        this.categoria = "Auriculares";
+        this.categoria = "Auricular";
     }
 
     @Override

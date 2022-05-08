@@ -14,5 +14,4 @@ public class Main {
         // executando o menu principal
         menuPrincipal.executar();
     }
-
 }
