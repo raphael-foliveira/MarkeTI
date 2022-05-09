@@ -12,6 +12,7 @@ public abstract class UICmd {
     }
 
     public String lerString(String mensagem) {
+        // imprime uma mensagem e lê uma string do usuário
         scanner = new Scanner(System.in);
         System.out.print(mensagem);
         String resposta = scanner.nextLine();
@@ -19,6 +20,7 @@ public abstract class UICmd {
     }
 
     public int lerInt(String mensagem) {
+        // imprime uma mensagem e lê um int do usuário
         scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {
@@ -31,6 +33,7 @@ public abstract class UICmd {
     }
 
     public double lerDouble(String mensagem) {
+        // imprime uma mensagem e lê um double do usuário
         scanner = new Scanner(System.in);
         System.out.println(mensagem);
         try {

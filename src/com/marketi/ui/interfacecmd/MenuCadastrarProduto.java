@@ -26,6 +26,8 @@ public class MenuCadastrarProduto {
     }
 
     public void executar() {
+        // executa o menu de cadastro e invoca o método de acordo com a escolha do
+        // usuário
         this.menu.mostrarOpcoes();
         int opcao = this.menu.lerSelecao();
         switch (opcao) {
@@ -49,6 +51,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarProduto() {
+        // lê os dados de um produto e cadastra o produto no catálogo
         System.out.println("Cadastrando produto genérico");
         String id = lerNovoId();
         String marca = this.menu.lerString("Marca: ");
@@ -59,6 +62,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarComputador() {
+        // lê os dados de um computador e cadastra no catálogo
         System.out.println("Cadastrando computador");
         String id = lerNovoId();
         String marca = this.menu.lerString("Marca: ");
@@ -73,6 +77,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarMonitor() {
+        // lê os dados de um monitor e cadastra no catálogo
         System.out.println("Cadastrando monitor");
         String id = lerNovoId();
         String marca = this.menu.lerString("Marca: ");
@@ -88,6 +93,7 @@ public class MenuCadastrarProduto {
     }
 
     public void cadastrarAuricular() {
+        // lê os dados de um auricular e cadastra no catálogo
         System.out.println("Cadastrando auricular");
         String id = lerNovoId();
         String marca = this.menu.lerString("Marca: ");
