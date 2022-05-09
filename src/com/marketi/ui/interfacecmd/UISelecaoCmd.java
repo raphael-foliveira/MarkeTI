@@ -25,11 +25,9 @@ public class UISelecaoCmd extends UICmd {
 
     public int lerSelecao() {
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
-        Scanner scanner = new Scanner(System.in);
         try {
-            System.out.print(">>> ");
             // tentando ler um número
-            int selecao = scanner.nextInt();
+            int selecao = lerInt(">>> ");
             if (selecao <= opcoes.size() && 0 < selecao) {
                 // se o valor for válido (correspondente ao número de opções do menu), retorna o
                 // valor
