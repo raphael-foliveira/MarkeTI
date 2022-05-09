@@ -43,6 +43,15 @@ public class Produto {
         return modelo;
     }
 
+    public String formatarParaListagem() {
+        // Formata uma string para listar o produto quando usada a opção "Visualizar
+        // catálogo" for escolhida
+        return String.format("%nId: %s%nModelo: %s%nPreço: %s%n",
+                id,
+                categoria,
+                marca);
+    }
+
     @Override
     public String toString() {
         return String.format(

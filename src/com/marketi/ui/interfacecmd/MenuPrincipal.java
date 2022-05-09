@@ -16,10 +16,11 @@ public class MenuPrincipal {
                 "Menu Principal",
                 Arrays.asList(
                         "1) Cadastrar novo produto",
-                        "2) Remover produto",
-                        "3) Visualizar catálogo",
-                        "4) Editar preço de produto",
-                        "5) Sair"));
+                        "2) Buscar produto por id",
+                        "3) Remover produto",
+                        "4) Visualizar catálogo",
+                        "5) Editar preço de produto",
+                        "6) Sair"));
     }
 
     public Object executar() {
@@ -31,15 +32,18 @@ public class MenuPrincipal {
                 cadastrarProduto();
                 break;
             case 2:
-                removerProduto();
+                buscarProdutoId();
                 break;
             case 3:
-                imprimirCatalogo();
+                removerProduto();
                 break;
             case 4:
-                mudarPreco();
+                imprimirCatalogo();
                 break;
             case 5:
+                mudarPreco();
+                break;
+            case 6:
                 System.out.println("Até logo!");
                 System.exit(0);
                 break;
@@ -53,6 +57,20 @@ public class MenuPrincipal {
         // Cria e executa um menu de cadastro para interação com o usuário
         MenuCadastrarProduto menuCadastro = new MenuCadastrarProduto(this.catalogo);
         menuCadastro.executar();
+    }
+
+    public void buscarProdutoId() {
+        // busca um produto do catálogo pelo seu id, caso exista
+        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        Produto produto = catalogo.encontrarProduto(idDoProduto);
+        if (produto == null) {
+            System.out.println("Produto não encontrado");
+            return;
+        }
+        System.out.println("----------------------------------------");
+        System.out.println(produto);
+        System.out.println("----------------------------------------");
+
     }
 
     public void removerProduto() {
