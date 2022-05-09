@@ -50,7 +50,7 @@ public class Catalogo {
         builder.append(String.format("%s%n", "---------------------------------------"));
 
         for (Produto produto : this.produtos) {
-            // Cada produto é adicionado à string, sendo separado por linhas
+            // Cada produto é adicionado à string, sendo separado por uma quebra de linha
             builder.append(String.format("%s%n", produto.formatarParaListagem()));
         }
         return builder.toString();
