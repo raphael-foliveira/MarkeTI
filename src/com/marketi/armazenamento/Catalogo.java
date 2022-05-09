@@ -45,7 +45,7 @@ public class Catalogo {
         StringBuilder builder = new StringBuilder();
 
         builder.append(
-                String.format("|%-5s|%-20s|%-10s|%n", "Id", "Modelo", "Preço"));
+                String.format("|%5s|%20s|%10s|%n", "Id", "Modelo", "Preço"));
 
         builder.append(String.format("%s%n", "---------------------------------------"));
 

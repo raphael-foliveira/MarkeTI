@@ -46,7 +46,7 @@ public class Produto {
     public String formatarParaListagem() {
         // Formata uma string para listar o produto quando usada a opção "Visualizar
         // catálogo" for escolhida
-        return String.format("|%-5s|%-20s|%-10s|",
+        return String.format("|%5s|%20s|R$%8s|",
                 id,
                 modelo,
                 preco);
@@ -57,7 +57,7 @@ public class Produto {
         StringBuilder builder = new StringBuilder();
         builder.append(
                 String.format(
-                        "|%-5s|%-10s|%-15s|%-20s|%-10s|%-15s|%n",
+                        "|%5s|%10s|%15s|%20s|%10s|%15s|%n",
                         "Id",
                         "Categoria",
                         "Marca",

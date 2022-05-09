@@ -26,7 +26,7 @@ public class Auricular extends Produto {
         StringBuilder builder = new StringBuilder();
         builder.append(
                 String.format(
-                        "|%-5s|%-10s|%-15s|%-20s|%-10s|%-20s|%-15s|%-13s|%-10s|%n",
+                        "|%5s|%10s|%15s|%20s|%10s|%20s|%15s|%13s|%10s|%n",
                         "Id",
                         "Categoria",
                         "Marca",
