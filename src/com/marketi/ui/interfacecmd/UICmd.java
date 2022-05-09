@@ -5,15 +5,9 @@ import java.util.Scanner;
 
 public abstract class UICmd {
 
-    Scanner scanner;
-
-    public UICmd() {
-        this.scanner = new Scanner(System.in);
-    }
-
     public String lerString(String mensagem) {
         // imprime uma mensagem e lê uma string do usuário
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print(mensagem);
         String resposta = scanner.nextLine();
         return resposta;
@@ -21,7 +15,7 @@ public abstract class UICmd {
 
     public int lerInt(String mensagem) {
         // imprime uma mensagem e lê um int do usuário
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {
             int resposta = scanner.nextInt();
@@ -34,7 +28,7 @@ public abstract class UICmd {
 
     public double lerDouble(String mensagem) {
         // imprime uma mensagem e lê um double do usuário
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println(mensagem);
         try {
             double resposta = scanner.nextDouble();

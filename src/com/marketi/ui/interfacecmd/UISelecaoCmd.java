@@ -2,6 +2,7 @@ package com.marketi.ui.interfacecmd;
 
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 public class UISelecaoCmd extends UICmd {
 
@@ -24,7 +25,7 @@ public class UISelecaoCmd extends UICmd {
 
     public int lerSelecao() {
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
-
+        Scanner scanner = new Scanner(System.in);
         try {
             System.out.print(">>> ");
             // tentando ler um número
@@ -43,7 +44,6 @@ public class UISelecaoCmd extends UICmd {
             // Caso um não-número seja fornecido como entrada,
             // tratamos o erro e invocamos o método novamente
             System.out.println("Comando inválido, tente novamente");
-            mostrarOpcoes();
             return lerSelecao();
         }
     }
