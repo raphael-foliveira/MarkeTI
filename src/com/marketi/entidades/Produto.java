@@ -46,7 +46,7 @@ public class Produto {
     public String formatarParaListagem() {
         // Formata uma string para listar o produto quando usada a opção "Visualizar
         // catálogo" for escolhida
-        return String.format("|%5s|%20s|R$%8s|",
+        return String.format("|%5s|%20s|R$%8.2f|",
                 id,
                 modelo,
                 preco);
