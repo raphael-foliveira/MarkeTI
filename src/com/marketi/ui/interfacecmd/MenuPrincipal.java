@@ -67,10 +67,7 @@ public class MenuPrincipal {
             System.out.println("Produto não encontrado");
             return;
         }
-        System.out.println("----------------------------------------");
         System.out.println(produto);
-        System.out.println("----------------------------------------");
-
     }
 
     public void removerProduto() {

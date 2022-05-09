@@ -25,11 +25,33 @@ public class Monitor extends Produto {
 
     @Override
     public String toString() {
-        return String.format(
-                super.toString() + "Taxa de Atualização(Hz): %s%nResolução: %s%nTipo de Tela: %s%n",
-                taxaDeAtualizacao,
-                resolucao,
-                tipoDeTela);
+        StringBuilder builder = new StringBuilder();
+        builder.append(
+                String.format(
+                        "|%-5s|%-10s|%-15s|%-20s|%-10s|%-15s|%-15s|%-10s|%-10s|%n",
+                        "Id",
+                        "Categoria",
+                        "Marca",
+                        "Modelo",
+                        "Preço",
+                        "Lote",
+                        "Tx. atualização",
+                        "Resolução",
+                        "Tipo Tela"));
+        builder.append(
+                String.format(
+                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%13sHz|%10s|%10s|%n",
+                        id,
+                        categoria,
+                        marca,
+                        modelo,
+                        preco,
+                        lote,
+                        taxaDeAtualizacao,
+                        resolucao,
+                        tipoDeTela));
+        return builder.toString();
+
     }
 
 }

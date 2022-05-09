@@ -46,22 +46,33 @@ public class Produto {
     public String formatarParaListagem() {
         // Formata uma string para listar o produto quando usada a opção "Visualizar
         // catálogo" for escolhida
-        return String.format("%nId: %s%nModelo: %s%nPreço: %s%n",
+        return String.format("|%-5s|%-20s|%-10s|",
                 id,
-                categoria,
-                marca);
+                modelo,
+                preco);
     }
 
     @Override
     public String toString() {
-        return String.format(
-                "%nId: %s%nCategoria: %s%nMarca: %s%nModelo: %s%nPreço: %.2f%nLote: %s%n",
-                id,
-                categoria,
-                marca,
-                modelo,
-                preco,
-                lote);
+        StringBuilder builder = new StringBuilder();
+        builder.append(
+                String.format(
+                        "|%-5s|%-10s|%-15s|%-20s|%-10s|%-15s|%n",
+                        "Id",
+                        "Categoria",
+                        "Marca",
+                        "Modelo",
+                        "Preço", "Lote"));
+        builder.append(
+                String.format(
+                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%n",
+                        id,
+                        categoria,
+                        marca,
+                        modelo,
+                        preco,
+                        lote));
+        return builder.toString();
     }
 
 }

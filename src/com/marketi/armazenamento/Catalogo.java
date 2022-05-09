@@ -44,11 +44,14 @@ public class Catalogo {
         // String
         StringBuilder builder = new StringBuilder();
 
+        builder.append(
+                String.format("|%-5s|%-20s|%-10s|%n", "Id", "Modelo", "Preço"));
+
+        builder.append(String.format("%s%n", "---------------------------------------"));
+
         for (Produto produto : this.produtos) {
             // Cada produto é adicionado à string, sendo separado por linhas
-            builder.append("----------------------------------------");
-            builder.append(produto.formatarParaListagem());
-            builder.append("----------------------------------------");
+            builder.append(String.format("%s%n", produto.formatarParaListagem()));
         }
         return builder.toString();
     }

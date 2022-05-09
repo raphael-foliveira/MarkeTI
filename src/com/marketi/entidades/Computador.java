@@ -22,10 +22,31 @@ public class Computador extends Produto {
 
     @Override
     public String toString() {
-        return String.format(
-                super.toString() + "RAM: %d%nArmazenamento(GB): %d%nSistema Operacional: %s%n",
-                memoriaRam,
-                armazenamento,
-                sistemaOperacional);
+        StringBuilder builder = new StringBuilder();
+        builder.append(
+                String.format(
+                        "|%-5s|%-10s|%-15s|%-20s|%-10s|%-20s|%-15s|%-13s|%-20s|%n",
+                        "Id",
+                        "Categoria",
+                        "Marca",
+                        "Modelo",
+                        "Preço",
+                        "Lote",
+                        "Memória RAM",
+                        "Armazenamento",
+                        "Sistema Operacional"));
+        builder.append(
+                String.format(
+                        "|%5s|%10s|%15s|%20s|R$%8.2f|%20s|%13sGB|%11sGB|%20s|%n",
+                        id,
+                        categoria,
+                        marca,
+                        modelo,
+                        preco,
+                        lote,
+                        memoriaRam,
+                        armazenamento,
+                        sistemaOperacional));
+        return builder.toString();
     }
 }
