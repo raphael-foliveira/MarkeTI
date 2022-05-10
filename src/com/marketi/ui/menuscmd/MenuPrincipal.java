@@ -10,7 +10,7 @@ public class MenuPrincipal extends MenuOpcoes {
 
     public MenuPrincipal(Catalogo catalogo) {
         super(catalogo);
-        this.menu = new UICmd(
+        this.opcoes = new UICmd(
                 "Menu Principal",
                 Arrays.asList(
                         "1) Cadastrar novo produto",
@@ -25,8 +25,8 @@ public class MenuPrincipal extends MenuOpcoes {
     public void executar() {
         // Executa o menu e executa o método referente à opção escolhida pelo usuário
         System.out.println(linhaMenu);
-        menu.mostrarOpcoes();
-        int opcao = menu.lerSelecao();
+        opcoes.mostrarOpcoes();
+        int opcao = opcoes.lerSelecao();
         switch (opcao) {
             case 1:
                 cadastrarProduto();
@@ -61,7 +61,7 @@ public class MenuPrincipal extends MenuOpcoes {
 
     public void buscarProdutoId() {
         // busca um produto do catálogo pelo seu id, caso exista
-        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        String idDoProduto = opcoes.lerString("Digite o id do produto: ");
         Produto produto = catalogo.encontrarProduto(idDoProduto);
         if (produto == null) {
             System.out.println("Produto não encontrado");
@@ -73,14 +73,14 @@ public class MenuPrincipal extends MenuOpcoes {
 
     public void removerProduto() {
         // recebe um id do usuário para remoção do produto do catálogo, caso exista
-        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        String idDoProduto = opcoes.lerString("Digite o id do produto: ");
         Produto produtoARemover = catalogo.encontrarProduto(idDoProduto);
 
         if (produtoARemover == null) {
             System.out.println("Produto não encontrado");
             return;
         }
-        String resposta = menu.lerString(
+        String resposta = opcoes.lerString(
                 String.format("Tem certeza que deseja apagar %s?(sim/não)%n>>> ", produtoARemover.getModelo()));
         if (resposta.equals("sim")) {
             catalogo.remover(produtoARemover);
@@ -92,7 +92,7 @@ public class MenuPrincipal extends MenuOpcoes {
 
     public void mudarPreco() {
         // recebe do usuário um id para buscar um produto
-        String idDoProduto = menu.lerString("Digite o id do produto: ");
+        String idDoProduto = opcoes.lerString("Digite o id do produto: ");
         Produto produtoSelecionado = catalogo.encontrarProduto(idDoProduto);
         if (produtoSelecionado == null) {
             // Checa se o produto selecionado pelo usuário existe. Caso não exista, a
@@ -104,7 +104,7 @@ public class MenuPrincipal extends MenuOpcoes {
         System.out.printf("Marca: %s%n", produtoSelecionado.getMarca());
         System.out.printf("Modelo: %s%n", produtoSelecionado.getModelo());
         System.out.printf("Preço Atual: %.2f%n", produtoSelecionado.getPreco());
-        double novoPreco = menu.lerDouble("Digite o novo preço: ");
+        double novoPreco = opcoes.lerDouble("Digite o novo preço: ");
         produtoSelecionado.setPreco(novoPreco);
     }
 

@@ -13,7 +13,7 @@ public class MenuCadastrarProduto extends MenuOpcoes {
 
     public MenuCadastrarProduto(Catalogo catalogo) {
         super(catalogo);
-        this.menu = new UICmd(
+        this.opcoes = new UICmd(
                 "Cadastrar Produto",
                 Arrays.asList(
                         "1) Produto genérico",
@@ -28,8 +28,8 @@ public class MenuCadastrarProduto extends MenuOpcoes {
         // executa o menu de cadastro e invoca o método de acordo com a escolha do
         // usuário
         System.out.println(linhaMenu);
-        menu.mostrarOpcoes();
-        int opcao = menu.lerSelecao();
+        opcoes.mostrarOpcoes();
+        int opcao = opcoes.lerSelecao();
         switch (opcao) {
             case 1:
                 cadastrarProduto();
@@ -54,10 +54,10 @@ public class MenuCadastrarProduto extends MenuOpcoes {
         // lê os dados de um produto e cadastra o produto no catálogo
         System.out.println("Cadastrando produto genérico");
         String id = lerNovoId();
-        String marca = menu.lerString("Marca: ");
-        String modelo = menu.lerString("Modelo: ");
-        String lote = menu.lerString("Lote: ");
-        double preco = menu.lerDouble("Preço: ");
+        String marca = opcoes.lerString("Marca: ");
+        String modelo = opcoes.lerString("Modelo: ");
+        String lote = opcoes.lerString("Lote: ");
+        double preco = opcoes.lerDouble("Preço: ");
         catalogo.adicionar(new Produto(id, marca, modelo, lote, preco));
     }
 
@@ -65,13 +65,13 @@ public class MenuCadastrarProduto extends MenuOpcoes {
         // lê os dados de um computador e cadastra no catálogo
         System.out.println("Cadastrando computador");
         String id = lerNovoId();
-        String marca = menu.lerString("Marca: ");
-        String modelo = menu.lerString("Modelo: ");
-        String lote = menu.lerString("Lote: ");
-        double preco = menu.lerDouble("Preço: ");
-        int memoriaRam = menu.lerInt("RAM: ");
-        int armazenamento = menu.lerInt("Armazenamento(GB): ");
-        String sistemaOperacional = menu.lerString("Sistema operacional: ");
+        String marca = opcoes.lerString("Marca: ");
+        String modelo = opcoes.lerString("Modelo: ");
+        String lote = opcoes.lerString("Lote: ");
+        double preco = opcoes.lerDouble("Preço: ");
+        int memoriaRam = opcoes.lerInt("RAM: ");
+        int armazenamento = opcoes.lerInt("Armazenamento(GB): ");
+        String sistemaOperacional = opcoes.lerString("Sistema operacional: ");
         catalogo.adicionar(
                 new Computador(id, marca, modelo, lote, preco, memoriaRam, armazenamento, sistemaOperacional));
     }
@@ -80,14 +80,14 @@ public class MenuCadastrarProduto extends MenuOpcoes {
         // lê os dados de um monitor e cadastra no catálogo
         System.out.println("Cadastrando monitor");
         String id = lerNovoId();
-        String marca = menu.lerString("Marca: ");
-        String modelo = menu.lerString("Modelo: ");
-        String lote = menu.lerString("Lote: ");
-        double preco = menu.lerDouble("Preço: ");
-        int tamanho = menu.lerInt("Tamanho (Polegadas): ");
-        int taxaDeAtualizacao = menu.lerInt("Taxa de atualização (Hz): ");
-        String resolucao = menu.lerString("Resolução: ");
-        String tipoDeTela = menu.lerString("Tipo de tela: ");
+        String marca = opcoes.lerString("Marca: ");
+        String modelo = opcoes.lerString("Modelo: ");
+        String lote = opcoes.lerString("Lote: ");
+        double preco = opcoes.lerDouble("Preço: ");
+        int tamanho = opcoes.lerInt("Tamanho (Polegadas): ");
+        int taxaDeAtualizacao = opcoes.lerInt("Taxa de atualização (Hz): ");
+        String resolucao = opcoes.lerString("Resolução: ");
+        String tipoDeTela = opcoes.lerString("Tipo de tela: ");
         catalogo.adicionar(
                 new Monitor(id, marca, modelo, lote, preco, tamanho, taxaDeAtualizacao, resolucao, tipoDeTela));
     }
@@ -96,22 +96,22 @@ public class MenuCadastrarProduto extends MenuOpcoes {
         // lê os dados de um auricular e cadastra no catálogo
         System.out.println("Cadastrando auricular");
         String id = lerNovoId();
-        String marca = menu.lerString("Marca: ");
-        String modelo = menu.lerString("Modelo: ");
-        String lote = menu.lerString("Lote: ");
-        double preco = menu.lerDouble("Preço: ");
-        int impedancia = menu.lerInt("Impedancia : ");
-        int sensibilidade = menu.lerInt("Sensibilidade(dB): ");
-        String conector = menu.lerString("Tipo de conector: ");
+        String marca = opcoes.lerString("Marca: ");
+        String modelo = opcoes.lerString("Modelo: ");
+        String lote = opcoes.lerString("Lote: ");
+        double preco = opcoes.lerDouble("Preço: ");
+        int impedancia = opcoes.lerInt("Impedancia : ");
+        int sensibilidade = opcoes.lerInt("Sensibilidade(dB): ");
+        String conector = opcoes.lerString("Tipo de conector: ");
         catalogo.adicionar(new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conector));
     }
 
     public String lerNovoId() {
         // Evita que IDs repetidos sejam cadastrados
-        String id = menu.lerString("Id: ");
+        String id = opcoes.lerString("Id: ");
         while (catalogo.encontrarProduto(id) != null) {
             System.out.println("Id já cadastrado. Tente novamente.");
-            id = menu.lerString("Id: ");
+            id = opcoes.lerString("Id: ");
         }
         return id;
     }

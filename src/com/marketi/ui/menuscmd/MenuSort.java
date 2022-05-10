@@ -8,7 +8,7 @@ public class MenuSort extends MenuOpcoes {
 
     MenuSort(Catalogo catalogo) {
         super(catalogo);
-        this.menu = new UICmd(
+        this.opcoes = new UICmd(
                 "Como deseja ordenar os produtos?",
                 Arrays.asList(
                         "1) Id",
@@ -18,8 +18,8 @@ public class MenuSort extends MenuOpcoes {
     @Override
     public void executar() {
         System.out.println(linhaMenu);
-        menu.mostrarOpcoes();
-        int opcao = menu.lerSelecao();
+        opcoes.mostrarOpcoes();
+        int opcao = opcoes.lerSelecao();
         switch (opcao) {
             case 1:
                 catalogo.ordenarPorId();

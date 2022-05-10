@@ -6,7 +6,7 @@ import com.marketi.ui.interfacecmd.UICmd;
 public abstract class MenuOpcoes {
 
     Catalogo catalogo;
-    UICmd menu;
+    UICmd opcoes;
     String linhaMenu = "----------------------------------------";
 
     public MenuOpcoes(Catalogo catalogo) {
