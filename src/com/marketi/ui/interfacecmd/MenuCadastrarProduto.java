@@ -8,13 +8,12 @@ import com.marketi.entidades.Computador;
 import com.marketi.entidades.Monitor;
 import com.marketi.entidades.Produto;
 
-public class MenuCadastrarProduto {
+public class MenuCadastrarProduto extends MenuOpcoes {
 
-    Catalogo catalogo;
     UICmd menu;
 
     public MenuCadastrarProduto(Catalogo catalogo) {
-        this.catalogo = catalogo;
+        super(catalogo);
         this.menu = new UICmd(
                 "Cadastrar Produto",
                 Arrays.asList(
@@ -25,6 +24,7 @@ public class MenuCadastrarProduto {
                         "5) Voltar ao menu principal"));
     }
 
+    @Override
     public void executar() {
         // executa o menu de cadastro e invoca o método de acordo com a escolha do
         // usuário

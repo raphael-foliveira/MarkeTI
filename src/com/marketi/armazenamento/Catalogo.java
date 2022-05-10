@@ -1,10 +1,8 @@
 package com.marketi.armazenamento;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.lang.Comparable;
 
 import com.marketi.entidades.*;
 

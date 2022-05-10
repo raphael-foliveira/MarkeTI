@@ -5,13 +5,12 @@ import java.util.Arrays;
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.entidades.Produto;
 
-public class MenuPrincipal {
+public class MenuPrincipal extends MenuOpcoes {
 
     UICmd menu;
-    Catalogo catalogo;
 
     public MenuPrincipal(Catalogo catalogo) {
-        this.catalogo = catalogo;
+        super(catalogo);
         this.menu = new UICmd(
                 "Menu Principal",
                 Arrays.asList(
@@ -23,7 +22,8 @@ public class MenuPrincipal {
                         "6) Sair"));
     }
 
-    public Object executar() {
+    @Override
+    public void executar() {
         // Executa o menu e executa o método referente à opção escolhida pelo usuário
         menu.mostrarOpcoes();
         int opcao = menu.lerSelecao();
@@ -50,7 +50,7 @@ public class MenuPrincipal {
             default:
                 break;
         }
-        return executar();
+        executar();
     }
 
     public void cadastrarProduto() {
@@ -103,5 +103,4 @@ public class MenuPrincipal {
         menuSort.executar();
         System.out.println(catalogo);
     }
-
 }
