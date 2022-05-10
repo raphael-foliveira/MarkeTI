@@ -1,4 +1,4 @@
-package com.marketi.ui.interfacecmd;
+package com.marketi.ui.menuscmd;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ import com.marketi.entidades.Auricular;
 import com.marketi.entidades.Computador;
 import com.marketi.entidades.Monitor;
 import com.marketi.entidades.Produto;
+import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuCadastrarProduto extends MenuOpcoes {
 
