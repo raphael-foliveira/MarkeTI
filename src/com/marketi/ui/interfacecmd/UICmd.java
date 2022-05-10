@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UICmd implements LeitorDeEntrada {
-
+    // Classe responsável por mostrar mensagens e receber entradas do usuário
     private String titulo;
     private List<String> opcoes;
+    Scanner scanner;
 
     public UICmd(String titulo, List<String> opcoes) {
         super();
@@ -41,7 +42,7 @@ public class UICmd implements LeitorDeEntrada {
     @Override
     public String lerString(String mensagem) {
         // imprime uma mensagem e lê uma string do usuário
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.print(mensagem);
         String resposta = scanner.nextLine();
         return resposta;
@@ -50,7 +51,7 @@ public class UICmd implements LeitorDeEntrada {
     @Override
     public int lerInt(String mensagem) {
         // imprime uma mensagem e lê um int do usuário
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {
             // tentando ler int
@@ -67,7 +68,7 @@ public class UICmd implements LeitorDeEntrada {
     @Override
     public double lerDouble(String mensagem) {
         // imprime uma mensagem e lê um double do usuário
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.println(mensagem);
         try {
             double resposta = scanner.nextDouble();
