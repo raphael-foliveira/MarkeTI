@@ -99,6 +99,8 @@ public class MenuPrincipal {
 
     public void imprimirCatalogo() {
         // Imprime todo o catálogo
+        MenuSort menuSort = new MenuSort(catalogo);
+        menuSort.executar();
         System.out.println(catalogo);
     }
 

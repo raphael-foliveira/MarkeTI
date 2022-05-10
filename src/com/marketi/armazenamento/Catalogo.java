@@ -1,8 +1,10 @@
 package com.marketi.armazenamento;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.lang.Comparable;
 
 import com.marketi.entidades.*;
 
@@ -11,6 +13,10 @@ public class Catalogo {
 
     public Catalogo() {
         produtos = new ArrayList<Produto>();
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
     public void adicionar(Produto produto) {
@@ -38,6 +44,14 @@ public class Catalogo {
             }
         }
         return null;
+    }
+
+    public void ordenarPorId() {
+        produtos.sort(Comparator.comparing(Produto::getId));
+    }
+
+    public void ordenarPorPreco() {
+        produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
     public String toString() {
