@@ -11,11 +11,11 @@ import com.marketi.entidades.Produto;
 public class MenuCadastrarProduto {
 
     Catalogo catalogo;
-    UISelecaoCmd menu;
+    UICmd menu;
 
     public MenuCadastrarProduto(Catalogo catalogo) {
         this.catalogo = catalogo;
-        this.menu = new UISelecaoCmd(
+        this.menu = new UICmd(
                 "Cadastrar Produto",
                 Arrays.asList(
                         "1) Produto genérico",

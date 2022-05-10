@@ -7,12 +7,12 @@ import com.marketi.entidades.Produto;
 
 public class MenuPrincipal {
 
-    UISelecaoCmd menu;
+    UICmd menu;
     Catalogo catalogo;
 
     public MenuPrincipal(Catalogo catalogo) {
         this.catalogo = catalogo;
-        this.menu = new UISelecaoCmd(
+        this.menu = new UICmd(
                 "Menu Principal",
                 Arrays.asList(
                         "1) Cadastrar novo produto",
