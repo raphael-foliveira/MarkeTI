@@ -1,5 +1,7 @@
 package com.marketi.entidades;
 
+import com.marketi.auxiliares.FormatadorProduto;
+
 public class Monitor extends Produto {
 
     final int tamanho, taxaDeAtualizacao;
@@ -23,35 +25,19 @@ public class Monitor extends Produto {
         this.categoria = "Monitor";
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|%10s|%15s|%15s|%10s|%10s|%n",
-                        "Id",
-                        "Categoria",
-                        "Marca",
-                        "Modelo",
-                        "Preço",
-                        "Lote",
-                        "Tx. atualização",
-                        "Resolução",
-                        "Tipo Tela"));
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%13sHz|%10s|%10s|%n",
-                        id,
-                        categoria,
-                        marca,
-                        modelo,
-                        preco,
-                        lote,
-                        taxaDeAtualizacao,
-                        resolucao,
-                        tipoDeTela));
-        return builder.toString();
-
+    public int getTaxaDeAtualizacao() {
+        return taxaDeAtualizacao;
     }
 
+    public String getResolucao() {
+        return resolucao;
+    }
+
+    public String getTipoDeTela() {
+        return tipoDeTela;
+    }
+
+    public String toString() {
+        return FormatadorProduto.formatarProduto(this);
+    }
 }

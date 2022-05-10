@@ -1,5 +1,7 @@
 package com.marketi.entidades;
 
+import com.marketi.auxiliares.FormatadorProduto;
+
 public class Produto {
     final String id, marca, modelo, lote;
     String categoria;
@@ -19,40 +21,21 @@ public class Produto {
         this.categoria = "Diverso";
     }
 
-    public String formatarParaListagem() {
-        // Formata uma string para listar o produto quando usada a opção "Visualizar
-        // catálogo" for escolhida
-        return String.format("|%5s|%20s|R$%8.2f|",
-                id,
-                modelo,
-                preco);
-    }
-
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|%10s|%15s|%n",
-                        "Id",
-                        "Categoria",
-                        "Marca",
-                        "Modelo",
-                        "Preço", "Lote"));
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%n",
-                        id,
-                        categoria,
-                        marca,
-                        modelo,
-                        preco,
-                        lote));
-        return builder.toString();
+        return FormatadorProduto.formatarProduto(this);
     }
 
     public String getId() {
         return id;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getLote() {

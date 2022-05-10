@@ -43,23 +43,6 @@ public class Catalogo {
         produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
-    public String toString() {
-        // Utiliza um StringBuilder para adicionar todos os elementos do catálogo a uma
-        // String
-        StringBuilder builder = new StringBuilder();
-
-        builder.append(
-                String.format("|%5s|%20s|%10s|%n", "Id", "Modelo", "Preço"));
-
-        builder.append(String.format("%s%n", "---------------------------------------"));
-
-        for (Produto produto : this.produtos) {
-            // Cada produto é adicionado à string, sendo separado por uma quebra de linha
-            builder.append(String.format("%s%n", produto.formatarParaListagem()));
-        }
-        return builder.toString();
-    }
-
     public void adicionarProdutosDemo() {
         // adicionando produtos para preencher a lista e demonstrar o funcionamento do
         // sistema

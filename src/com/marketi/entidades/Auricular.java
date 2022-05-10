@@ -21,34 +21,16 @@ public class Auricular extends Produto {
         this.categoria = "Auricular";
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|%10s|%20s|%15s|%13s|%10s|%n",
-                        "Id",
-                        "Categoria",
-                        "Marca",
-                        "Modelo",
-                        "Preço",
-                        "Lote",
-                        "Impedância",
-                        "Sensibilidade",
-                        "Conexão"));
-        builder.append(
-                String.format(
-                        "|%5s|%10s|%15s|%20s|R$%8.2f|%20s|%11sOhms|%11sdB|%10s|%n",
-                        id,
-                        categoria,
-                        marca,
-                        modelo,
-                        preco,
-                        lote,
-                        impedancia,
-                        sensibilidade,
-                        conexao));
-        return builder.toString();
+    public int getImpedancia() {
+        return impedancia;
+    }
+
+    public int getSensibilidade() {
+        return sensibilidade;
+    }
+
+    public String getConexao() {
+        return conexao;
     }
 
 }

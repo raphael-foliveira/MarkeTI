@@ -3,6 +3,10 @@ package com.marketi.ui.menuscmd;
 import java.util.Arrays;
 
 import com.marketi.armazenamento.Catalogo;
+import com.marketi.auxiliares.FormatadorProduto;
+import com.marketi.entidades.Auricular;
+import com.marketi.entidades.Computador;
+import com.marketi.entidades.Monitor;
 import com.marketi.entidades.Produto;
 import com.marketi.ui.interfacecmd.UICmd;
 
@@ -113,6 +117,6 @@ public class MenuPrincipal extends MenuOpcoes {
         // Imprime todo o catálogo
         MenuOrdenacao menuSort = new MenuOrdenacao(catalogo);
         menuSort.executar();
-        System.out.println(catalogo);
+        FormatadorProduto.formatarCatalogo(catalogo);
     }
 }
