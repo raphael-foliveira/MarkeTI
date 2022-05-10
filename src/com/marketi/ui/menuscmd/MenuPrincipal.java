@@ -1,13 +1,12 @@
-package com.marketi.ui.interfacecmd;
+package com.marketi.ui.menuscmd;
 
 import java.util.Arrays;
 
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.entidades.Produto;
+import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuPrincipal extends MenuOpcoes {
-
-    UICmd menu;
 
     public MenuPrincipal(Catalogo catalogo) {
         super(catalogo);
@@ -25,6 +24,7 @@ public class MenuPrincipal extends MenuOpcoes {
     @Override
     public void executar() {
         // Executa o menu e executa o método referente à opção escolhida pelo usuário
+        System.out.println(linhaMenu);
         menu.mostrarOpcoes();
         int opcao = menu.lerSelecao();
         switch (opcao) {
@@ -67,16 +67,27 @@ public class MenuPrincipal extends MenuOpcoes {
             System.out.println("Produto não encontrado");
             return;
         }
+        System.out.println(linhaMenu);
         System.out.println(produto);
     }
 
     public void removerProduto() {
         // recebe um id do usuário para remoção do produto do catálogo, caso exista
         String idDoProduto = menu.lerString("Digite o id do produto: ");
-        boolean removido = catalogo.remover(idDoProduto);
-        if (!removido) {
+        Produto produtoARemover = catalogo.encontrarProduto(idDoProduto);
+
+        if (produtoARemover == null) {
             System.out.println("Produto não encontrado");
+            return;
         }
+        String resposta = menu.lerString(
+                String.format("Tem certeza que deseja apagar %s?(sim/não)%n>>> ", produtoARemover.getModelo()));
+        if (resposta.equals("sim")) {
+            catalogo.remover(produtoARemover);
+            System.out.println("Produto removido do catálogo");
+            return;
+        }
+        System.out.println("Ação cancelada");
     }
 
     public void mudarPreco() {

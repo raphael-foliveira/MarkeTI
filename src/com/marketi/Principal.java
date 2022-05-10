@@ -1,7 +1,7 @@
 package com.marketi;
 
 import com.marketi.armazenamento.Catalogo;
-import com.marketi.ui.interfacecmd.MenuPrincipal;
+import com.marketi.ui.menuscmd.MenuPrincipal;
 
 public class Principal {
     public static void main(String[] args) {

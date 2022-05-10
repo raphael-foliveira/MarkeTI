@@ -19,30 +19,6 @@ public class Produto {
         this.categoria = "Diverso";
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getLote() {
-        return lote;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
     public String formatarParaListagem() {
         // Formata uma string para listar o produto quando usada a opção "Visualizar
         // catálogo" for escolhida
@@ -73,6 +49,30 @@ public class Produto {
                         preco,
                         lote));
         return builder.toString();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getLote() {
+        return lote;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
     }
 
 }

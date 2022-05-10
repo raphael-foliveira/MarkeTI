@@ -1,11 +1,10 @@
-package com.marketi.ui.interfacecmd;
+package com.marketi.ui.menuscmd;
 
 import java.util.Arrays;
 import com.marketi.armazenamento.Catalogo;
+import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuSort extends MenuOpcoes {
-
-    UICmd menu;
 
     MenuSort(Catalogo catalogo) {
         super(catalogo);
@@ -18,7 +17,7 @@ public class MenuSort extends MenuOpcoes {
 
     @Override
     public void executar() {
-
+        System.out.println(linhaMenu);
         menu.mostrarOpcoes();
         int opcao = menu.lerSelecao();
         switch (opcao) {

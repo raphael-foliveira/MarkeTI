@@ -11,8 +11,6 @@ import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuCadastrarProduto extends MenuOpcoes {
 
-    UICmd menu;
-
     public MenuCadastrarProduto(Catalogo catalogo) {
         super(catalogo);
         this.menu = new UICmd(
@@ -29,6 +27,7 @@ public class MenuCadastrarProduto extends MenuOpcoes {
     public void executar() {
         // executa o menu de cadastro e invoca o método de acordo com a escolha do
         // usuário
+        System.out.println(linhaMenu);
         menu.mostrarOpcoes();
         int opcao = menu.lerSelecao();
         switch (opcao) {

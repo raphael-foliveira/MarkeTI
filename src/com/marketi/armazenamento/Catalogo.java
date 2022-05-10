@@ -13,24 +13,15 @@ public class Catalogo {
         produtos = new ArrayList<Produto>();
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
     public void adicionar(Produto produto) {
         // adiciona um produto
         produtos.add(produto);
     }
 
-    public boolean remover(String id) {
+    public void remover(Produto produto) {
         // remove um produto caso ele exista
         // retorna false se o produto não for encontrado
-        Produto produto = encontrarProduto(id);
-        if (produto == null) {
-            return false;
-        }
         produtos.remove(produto);
-        return true;
     }
 
     public Produto encontrarProduto(String id) {
@@ -137,5 +128,9 @@ public class Catalogo {
                         180,
                         110,
                         "USB"));
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 }
