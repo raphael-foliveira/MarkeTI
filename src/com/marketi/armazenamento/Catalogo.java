@@ -2,6 +2,7 @@ package com.marketi.armazenamento;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Comparator;
 
 import com.marketi.entidades.*;
 
@@ -125,5 +126,4 @@ public class Catalogo {
                         110,
                         "USB"));
     }
-
 }

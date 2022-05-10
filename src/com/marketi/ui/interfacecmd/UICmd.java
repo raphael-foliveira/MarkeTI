@@ -25,22 +25,14 @@ public class UICmd implements Legivel {
 
     public int lerSelecao() {
         // Método responsável pela leitura da entrada do usuário (escolha da opção)
-        try {
-            // tentando ler um número
-            int selecao = lerInt(">>> ");
-            if (selecao <= opcoes.size() && 0 < selecao) {
-                // se o valor for válido (correspondente ao número de opções do menu), retorna o
-                // valor
-                return selecao;
-            } else {
-                // caso não exista opção no menu para o valor selecionado, retorna a própria
-                // função
-                System.out.println("Comando inválido, tente novamente");
-                return lerSelecao();
-            }
-        } catch (InputMismatchException e) {
-            // Caso um não-número seja fornecido como entrada,
-            // tratamos o erro e invocamos o método novamente
+        int selecao = lerInt(">>> ");
+        if (selecao <= opcoes.size() && 0 < selecao) {
+            // se o valor for válido (correspondente ao número de opções do menu), retorna o
+            // valor
+            return selecao;
+        } else {
+            // caso não exista opção no menu para o valor selecionado, retorna a própria
+            // função
             System.out.println("Comando inválido, tente novamente");
             return lerSelecao();
         }
@@ -61,9 +53,12 @@ public class UICmd implements Legivel {
         Scanner scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {
+            // tentando ler int
             int resposta = scanner.nextInt();
             return resposta;
         } catch (InputMismatchException e) {
+            // caso o valor seja inválido, imprime uma mensagem de erro e executa a função
+            // novamente
             System.out.println("Esse valor deve ser um número inteiro");
             return lerInt(mensagem);
         }
