@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class UICmd implements Legivel {
+public class UICmd implements LeitorDeEntrada {
 
     private String titulo;
     private List<String> opcoes;
