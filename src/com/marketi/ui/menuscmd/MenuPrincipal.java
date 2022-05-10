@@ -7,7 +7,8 @@ import com.marketi.entidades.Produto;
 import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuPrincipal extends MenuOpcoes {
-
+    // classe responsável por mostrar o menu principal ao usuário, ler a escolha da
+    // opção e executar os métodos referentes à opção escolhida
     public MenuPrincipal(Catalogo catalogo) {
         super(catalogo);
         this.opcoes = new UICmd(
@@ -110,7 +111,7 @@ public class MenuPrincipal extends MenuOpcoes {
 
     public void imprimirCatalogo() {
         // Imprime todo o catálogo
-        MenuSort menuSort = new MenuSort(catalogo);
+        MenuOrdenacao menuSort = new MenuOrdenacao(catalogo);
         menuSort.executar();
         System.out.println(catalogo);
     }

@@ -10,7 +10,8 @@ import com.marketi.entidades.Produto;
 import com.marketi.ui.interfacecmd.UICmd;
 
 public class MenuCadastrarProduto extends MenuOpcoes {
-
+    // Classe responsável por mostrar as opções que o usuário tem para cadastrar um
+    // novo produto no catálogo
     public MenuCadastrarProduto(Catalogo catalogo) {
         super(catalogo);
         this.opcoes = new UICmd(

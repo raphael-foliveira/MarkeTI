@@ -4,9 +4,10 @@ import java.util.Arrays;
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.ui.interfacecmd.UICmd;
 
-public class MenuSort extends MenuOpcoes {
-
-    MenuSort(Catalogo catalogo) {
+public class MenuOrdenacao extends MenuOpcoes {
+    // Pequeno menu responsável por permitir que usuário escolha em qual ordem os
+    // produtos vão ser listados
+    MenuOrdenacao(Catalogo catalogo) {
         super(catalogo);
         this.opcoes = new UICmd(
                 "Como deseja ordenar os produtos?",
