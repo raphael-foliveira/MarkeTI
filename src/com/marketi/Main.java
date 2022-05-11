@@ -1,10 +1,17 @@
 package com.marketi;
 
-import com.marketi.menus.menuscmd.MenuPrincipal;
+import com.marketi.armazenamento.Catalogo;
+import com.marketi.menus.MenuPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        menuPrincipal.pegarSelecaoUsuario();
+        
+        Catalogo catalogo = new Catalogo();
+
+        catalogo.adicionarProdutos();
+
+        MenuPrincipal menuprincipal = new MenuPrincipal(catalogo);
+
+        menuprincipal.executar();
     }
 }

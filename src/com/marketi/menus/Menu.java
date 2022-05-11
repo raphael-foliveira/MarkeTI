@@ -1,9 +1,30 @@
 package com.marketi.menus;
 
-public interface Menu {
-    // interface principal com os métodos que devem ser implementados
-    // em todos os menus
-    public void mostrarMenu();
+import com.marketi.armazenamento.*;
 
-    public int lerSelecao();
+import java.util.List;
+
+
+public abstract class Menu {
+
+    Catalogo catalogo;
+
+    List<String> opcoes;
+
+    Menu(Catalogo catalogo){
+
+        this.catalogo = catalogo;
+    }
+
+    public abstract void executar();
+
+    public void MostrarOpcoes(){
+        for (String opcao : opcoes) {
+            System.out.println(opcao);
+        }
+    }
+
+    public void Linha(){
+        System.out.println("---------------------------------");
+    }
 }
