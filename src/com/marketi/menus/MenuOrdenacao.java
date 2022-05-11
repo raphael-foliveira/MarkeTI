@@ -1,7 +1,6 @@
 package com.marketi.menus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.auxiliares.Leitor;
