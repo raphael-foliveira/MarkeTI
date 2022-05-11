@@ -101,7 +101,6 @@ public class MenuPrincipal extends Menus {
         // ordenação do usuário
         MenuOrdenacao menuOrdenacao = new MenuOrdenacao(catalogo);
         menuOrdenacao.executar();
-        String listaProdutos = FormatadorCatalogo.formatarCatalogo(catalogo);
-        System.out.println(listaProdutos);
+        System.out.println(catalogo);
     }
 }

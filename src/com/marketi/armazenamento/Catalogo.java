@@ -35,6 +35,25 @@ public class Catalogo {
         return null;
     }
 
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(
+                String.format("|%5s|%20s|%10s|%n", "Id", "Modelo", "Preço"));
+
+        builder.append(String.format("%s%n", "---------------------------------------"));
+
+        for (Produto produto : produtos) {
+            // Cada produto é adicionado à string, sendo separado por uma quebra de linha
+            builder.append(String.format(
+                    "|%5s|%20s|R$%8.2f|%n",
+                    produto.getId(),
+                    produto.getModelo(),
+                    produto.getPreco()));
+        }
+        return builder.toString();
+    }
+
     public void ordenarPorId() {
         produtos.sort(Comparator.comparing(Produto::getId));
     }
