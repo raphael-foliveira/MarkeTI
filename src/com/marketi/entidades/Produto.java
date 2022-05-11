@@ -1,7 +1,5 @@
 package com.marketi.entidades;
 
-import com.marketi.auxiliares.FormatadorProduto;
-
 public class Produto {
     final String id, marca, modelo, lote;
     String categoria;
@@ -19,11 +17,6 @@ public class Produto {
         this.lote = lote;
         this.preco = preco;
         this.categoria = "Diverso";
-    }
-
-    @Override
-    public String toString() {
-        return FormatadorProduto.formatarProduto(this);
     }
 
     public String getId() {
