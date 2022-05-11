@@ -21,4 +21,8 @@ public abstract class Menus {
         }
     }
 
+    public void printLinha() {
+        System.out.println("---------------------------------------");
+    }
+
 }

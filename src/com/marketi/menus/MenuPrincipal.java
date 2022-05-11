@@ -21,6 +21,7 @@ public class MenuPrincipal extends Menus {
     }
 
     public void executar() {
+        printLinha();
         System.out.println("Menu principal");
         mostrarOpcoes();
         int opcao = Leitor.lerInt(">>> ");

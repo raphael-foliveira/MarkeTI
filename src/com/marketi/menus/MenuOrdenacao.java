@@ -17,6 +17,7 @@ public class MenuOrdenacao extends Menus {
     }
 
     public void executar() {
+        printLinha();
         System.out.println("Como deseja ordenar os dados?");
         mostrarOpcoes();
         int opcao = Leitor.lerInt(">>> ");

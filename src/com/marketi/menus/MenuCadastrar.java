@@ -26,6 +26,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public void executar() {
+        printLinha();
         System.out.println("Cadastrando novo produto");
         mostrarOpcoes();
         int opcao = Leitor.lerInt(">>> ");
