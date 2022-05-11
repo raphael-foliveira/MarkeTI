@@ -1,6 +1,7 @@
 package com.marketi.menus;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.marketi.auxiliares.FormatadorCatalogo;
 import com.marketi.auxiliares.Leitor;
@@ -11,16 +12,19 @@ public class MenuPrincipal extends Menus {
 
     public MenuPrincipal(Catalogo catalogo) {
         super(catalogo);
-        opcoes = new ArrayList<>();
-        opcoes.add("1) Cadastrar novo produto");
-        opcoes.add("2) Buscar produto por Id");
-        opcoes.add("3) Remover Produto");
-        opcoes.add("4) Listar todos os produtos");
-        opcoes.add("5) Mudar preço de um produto");
-        opcoes.add("6) Sair");
+        opcoes = new ArrayList<>(
+                Arrays.asList(
+                        "1) Cadastrar novo produto",
+                        "2) Buscar produto por Id",
+                        "3) Remover Produto",
+                        "4) Listar todos os produtos",
+                        "5) Mudar preço de um produto",
+                        "6) Sair"));
     }
 
+    @Override
     public void executar() {
+        // executa o menu principal e permite que o usuário escolha uma das opções
         printLinha();
         System.out.println("Menu principal");
         mostrarOpcoes();
@@ -55,19 +59,23 @@ public class MenuPrincipal extends Menus {
     }
 
     public Produto buscarProdutoPorId() {
+        // Busca um produto por id, caso ele exista.
         String idDoProduto = Leitor.lerString("Digite o id do produto: ");
         Produto produto = catalogo.encontrarProduto(idDoProduto);
         if (produto != null) {
             return produto;
         }
         System.out.println("Produto não encontrado.");
-        return buscarProdutoPorId();
+        return buscarProdutoPorId(); // Reexecuta a função caso o id não exista
     }
 
     public void removerProduto() {
-        Produto produto = buscarProdutoPorId();
+        // Remove um produto do catálogo, caso ele exista. Pede confirmação do usuário
+        // para apagar o produto, permitindo que ele cancele a ação
+        Produto produto = buscarProdutoPorId(); // Busca e checagem da existência do produto é feita dentro do método
+                                                // buscarProdutoPorId()
         System.out.printf("Tem certeza que deseja apagar %s %s?%n", produto.getMarca(), produto.getModelo());
-        String resposta = Leitor.lerString("(s/n): ");
+        String resposta = Leitor.lerString("(s/n): "); // Confirmação do usuário
         if (resposta.equals("s")) {
             catalogo.remover(produto);
             System.out.printf("%s removido.%n", produto.getModelo());
@@ -77,7 +85,9 @@ public class MenuPrincipal extends Menus {
     }
 
     public void mudarPrecoDeProduto() {
-        Produto produto = buscarProdutoPorId();
+        // Muda o preço de um produto, caso ele exista
+        Produto produto = buscarProdutoPorId(); // Busca e checagem da existência do produto
+        // Imprime os dados do produto para conferência do usuário
         System.out.printf("Marca: %s%n", produto.getMarca());
         System.out.printf("Modelo: %s%n", produto.getModelo());
         System.out.printf("Preço atual: %.2f%n", produto.getPreco());
@@ -87,6 +97,8 @@ public class MenuPrincipal extends Menus {
     }
 
     public void listarTodosOsProdutos() {
+        // Lista todos os produtos do catálogo, ordenado de acordo com a escolha de
+        // ordenação do usuário
         MenuOrdenacao menuOrdenacao = new MenuOrdenacao(catalogo);
         menuOrdenacao.executar();
         String listaProdutos = FormatadorCatalogo.formatarCatalogo(catalogo);

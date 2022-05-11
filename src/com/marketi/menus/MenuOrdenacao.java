@@ -16,7 +16,9 @@ public class MenuOrdenacao extends Menus {
         opcoes.add("4) Voltar ao menu principal");
     }
 
+    @Override
     public void executar() {
+        // Executa o menu mostrando as opções de ordenação
         printLinha();
         System.out.println("Como deseja ordenar os dados?");
         mostrarOpcoes();
@@ -40,11 +42,4 @@ public class MenuOrdenacao extends Menus {
                 break;
         }
     }
-
-    public void mostrarOpcoes() {
-        for (String opcao : opcoes) {
-            System.out.println(opcao);
-        }
-    }
-
 }

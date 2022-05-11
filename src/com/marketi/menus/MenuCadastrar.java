@@ -25,7 +25,9 @@ public class MenuCadastrar extends Menus {
         opcoes.add("5) Voltar ao menu principal");
     }
 
+    @Override
     public void executar() {
+        // Executa menu de cadastro
         printLinha();
         System.out.println("Cadastrando novo produto");
         mostrarOpcoes();
@@ -53,13 +55,8 @@ public class MenuCadastrar extends Menus {
         }
     }
 
-    public void mostrarOpcoes() {
-        for (String opcao : opcoes) {
-            System.out.println(opcao);
-        }
-    }
-
     public void cadastrarDiverso() {
+        // Cadastra um novo produto diverso
         System.out.println("Cadastrando produto diverso");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -70,6 +67,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public void cadastrarAuricular() {
+        // Cadastra um novo auricular
         System.out.println("Cadastrando auricular");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -83,6 +81,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public void cadastrarMonitor() {
+        // Cadastra um novo monitor
         System.out.println("Cadastrando monitor");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -98,6 +97,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public void cadastrarComputador() {
+        // Cadastrar computador
         System.out.println("Cadastrando computador");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -112,6 +112,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public String lerId() {
+        // Lê um id e o retorna caso ele já não pertença a um produto do catálogo
         String id = Leitor.lerString("Id: ");
         if (catalogo.encontrarProduto(id) == null) {
             return id;
