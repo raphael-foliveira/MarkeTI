@@ -6,9 +6,9 @@ import com.marketi.entidades.Computador;
 import com.marketi.entidades.Monitor;
 import com.marketi.entidades.Produto;
 
-public class Formatador {
+public class FormatadorProduto {
 
-        Formatador() {
+        FormatadorProduto() {
 
         }
 
@@ -104,19 +104,25 @@ public class Formatador {
 
         public static String formatarProduto(Produto produto) {
                 StringBuilder builder = new StringBuilder();
-                Object[] nomeAtributos = {"Id", "Categoria", "Marca", "Modelo", "Preço", "Lote"};
-                Object[] valoresAtributos = { produto.getId(),
+
+                builder.append(
+                        String.format(
+                                "|%5s|%10s|%15s|%20s|%10s|%15s|%n",
+                                "Id",
+                                "Categoria",
+                                "Marca",
+                                "Modelo",
+                                "Preço",
+                                "Lote"));
+                builder.append(
+                        String.format(
+                                "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%n",
+                                produto.getId(),
                                 produto.getCategoria(),
                                 produto.getMarca(),
                                 produto.getModelo(),
                                 produto.getPreco(),
-                                produto.getLote() };
-                builder.append(
-                        String.format(
-                                "|%5s|%10s|%15s|%20s|%10s|%15s|%n", nomeAtributos));
-                builder.append(
-                        String.format(
-                                "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|", valoresAtributos));
+                                produto.getLote()));
 
                 return builder.toString();
         }
