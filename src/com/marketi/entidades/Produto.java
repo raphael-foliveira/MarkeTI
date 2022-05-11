@@ -1,7 +1,5 @@
 package com.marketi.entidades;
 
-import com.marketi.auxiliares.FormatadorProduto;
-
 public class Produto {
     final String id, marca, modelo, lote;
     String categoria;
@@ -23,7 +21,28 @@ public class Produto {
 
     @Override
     public String toString() {
-        return FormatadorProduto.formatarProduto(this);
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(
+                String.format(
+                        "|%5s|%10s|%15s|%20s|%10s|%15s|%n",
+                        "Id",
+                        "Categoria",
+                        "Marca",
+                        "Modelo",
+                        "Preço",
+                        "Lote"));
+        builder.append(
+                String.format(
+                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%n",
+                        id,
+                        categoria,
+                        marca,
+                        modelo,
+                        preco,
+                        lote));
+
+        return builder.toString();
     }
 
     public String getId() {

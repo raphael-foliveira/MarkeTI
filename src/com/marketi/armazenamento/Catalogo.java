@@ -43,6 +43,10 @@ public class Catalogo {
         produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
+    public void ordenarPorModelo() {
+        produtos.sort(Comparator.comparing(Produto::getModelo));
+    }
+
     public void adicionarProdutosDemo() {
         // adicionando produtos para preencher a lista e demonstrar o funcionamento do
         // sistema
