@@ -8,7 +8,7 @@ public class Leitor {
     
     static Scanner scanner = new Scanner(System.in);
 
-    public static int LerInt(String mensagem){
+    public static int lerInt(String mensagem){
 
         scanner = new Scanner(System.in);
         System.out.println(mensagem);
@@ -18,11 +18,11 @@ public class Leitor {
             return scanner.nextInt();
 
         } catch (Exception e) {
-            return LerInt(mensagem);
+            return lerInt(mensagem);
         }
     }
 
-    public static Double LerDouble(String mensagem){
+    public static Double lerDouble(String mensagem){
 
         scanner = new Scanner(System.in);
 
@@ -33,11 +33,11 @@ public class Leitor {
             return scanner.nextDouble(); 
 
         } catch (Exception e) {
-            return LerDouble(mensagem);
+            return lerDouble(mensagem);
         }
     }
 
-    public static String LerString(String mensagem){
+    public static String lerString(String mensagem){
 
         scanner = new Scanner(System.in);
 
@@ -48,7 +48,7 @@ public class Leitor {
             return scanner.next();
 
         } catch (Exception e) {
-            return LerString(mensagem);
+            return lerString(mensagem);
         }
     }
 }

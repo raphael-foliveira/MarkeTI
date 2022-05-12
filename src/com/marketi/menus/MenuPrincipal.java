@@ -15,21 +15,22 @@ public class MenuPrincipal extends Menu {
         
         super(catalogo);
 
-        List <String> opcoes = Arrays.asList(
+        opcoes = Arrays.asList(
             
-"1) Cadastrar novo produto", 
-      "2) Buscar produto por Id",
-      "3) Remover Produto",
-      "4) Listar todos os produtos",
-      "5) Mudar preço de um produto",
-      "6) Sair");
+            "1) Cadastrar novo produto", 
+                  "2) Buscar produto por Id",
+                  "3) Remover Produto",
+                  "4) Listar todos os produtos",
+                  "5) Mudar preço de um produto",
+                  "6) Sair");
     }
 
+    @Override
     public void executar(){
         Linha();
         System.out.println("Menu Principal");
         MostrarOpcoes();
-        int opcao = Leitor.LerInt(">>>");
+        int opcao = Leitor.lerInt(">>>");
 
         switch (opcao) {
             case 1:

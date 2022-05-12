@@ -7,9 +7,9 @@ import java.util.List;
 
 public abstract class Menu {
 
-    Catalogo catalogo;
+    protected Catalogo catalogo;
 
-    List<String> opcoes;
+    protected List<String> opcoes;
 
     Menu(Catalogo catalogo){
 

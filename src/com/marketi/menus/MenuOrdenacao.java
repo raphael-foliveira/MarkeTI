@@ -14,22 +14,22 @@ public class MenuOrdenacao extends Menu {
 
         super(catalogo);
 
-        opcoes = new ArrayList<>();
+        opcoes = Arrays.asList(
+            "1) Id", 
+                 "2) Preço", 
+                 "3) Modelo", 
+                 "4) Voltar ao menu principal");
 
-        List<String> opcoes = Arrays.asList(
-        "1) Id", 
-        "2) Preço", 
-        "3) Modelo", 
-        "4) Voltar ao menu principal");
     }
 
 
+    @Override
     public void executar(){
         Linha();
         System.out.println("Escolha a opção para ordenar os dados: ");
         MostrarOpcoes();
 
-        int opcao = Leitor.LerInt(">>>");
+        int opcao = Leitor.lerInt(">>>");
 
         switch (opcao) {
             case 1:
