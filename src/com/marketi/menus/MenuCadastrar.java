@@ -1,7 +1,6 @@
 package com.marketi.menus;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.auxiliares.Leitor;
@@ -12,17 +11,14 @@ import com.marketi.entidades.Produto;
 
 public class MenuCadastrar extends Menus {
 
-    private Catalogo catalogo;
-    private List<String> opcoes;
-
     public MenuCadastrar(Catalogo catalogo) {
         super(catalogo);
-        opcoes = new ArrayList<>();
-        opcoes.add("1) Diverso");
-        opcoes.add("2) Auricular");
-        opcoes.add("3) Computador");
-        opcoes.add("4) Monitor");
-        opcoes.add("5) Voltar ao menu principal");
+        opcoes = Arrays.asList(
+                "1) Diverso",
+                "2) Auricular",
+                "3) Computador",
+                "4) Monitor",
+                "5) Voltar ao menu principal");
     }
 
     @Override
@@ -63,7 +59,8 @@ public class MenuCadastrar extends Menus {
         String modelo = Leitor.lerString("Modelo: ");
         double preco = Leitor.lerDouble("Preço: ");
         String lote = Leitor.lerString("Lote: ");
-        catalogo.adicionar(new Produto(id, marca, modelo, lote, preco));
+        catalogo.adicionar(
+                new Produto(id, marca, modelo, lote, preco));
     }
 
     public void cadastrarAuricular() {
@@ -77,7 +74,8 @@ public class MenuCadastrar extends Menus {
         int impedancia = Leitor.lerInt("Impedância: ");
         int sensibilidade = Leitor.lerInt("Sensibilidade: ");
         String conexao = Leitor.lerString("Conexão: ");
-        catalogo.adicionar(new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conexao));
+        catalogo.adicionar(
+                new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conexao));
     }
 
     public void cadastrarMonitor() {

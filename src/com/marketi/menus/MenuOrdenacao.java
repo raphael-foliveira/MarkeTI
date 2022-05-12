@@ -1,19 +1,19 @@
 package com.marketi.menus;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.auxiliares.Leitor;
 
 public class MenuOrdenacao extends Menus {
 
-    MenuOrdenacao(Catalogo catalogo) {
+    public MenuOrdenacao(Catalogo catalogo) {
         super(catalogo);
-        opcoes = new ArrayList<>();
-        opcoes.add("1) Id");
-        opcoes.add("2) Preço");
-        opcoes.add("3) Modelo");
-        opcoes.add("4) Voltar ao menu principal");
+        opcoes = Arrays.asList(
+                "1) Id",
+                "2) Preço",
+                "3) Modelo",
+                "4) Voltar ao menu principal");
     }
 
     @Override

@@ -1,9 +1,6 @@
 package com.marketi.menus;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-
-import com.marketi.auxiliares.FormatadorCatalogo;
 import com.marketi.auxiliares.Leitor;
 import com.marketi.entidades.Produto;
 import com.marketi.armazenamento.Catalogo;
@@ -12,14 +9,13 @@ public class MenuPrincipal extends Menus {
 
     public MenuPrincipal(Catalogo catalogo) {
         super(catalogo);
-        opcoes = new ArrayList<>(
-                Arrays.asList(
-                        "1) Cadastrar novo produto",
-                        "2) Buscar produto por Id",
-                        "3) Remover Produto",
-                        "4) Listar todos os produtos",
-                        "5) Mudar preço de um produto",
-                        "6) Sair"));
+        opcoes = Arrays.asList(
+                "1) Cadastrar novo produto",
+                "2) Buscar produto por Id",
+                "3) Remover Produto",
+                "4) Listar todos os produtos",
+                "5) Mudar preço de um produto",
+                "6) Sair");
     }
 
     @Override
