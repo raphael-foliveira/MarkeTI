@@ -42,7 +42,7 @@ public class Catalogo {
     }
 
     public void ordenacaoPreco(){
-        produtos.sort(Comparator.comparing(Produto::getMarca));
+        produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
     public void adicionarProdutos(){

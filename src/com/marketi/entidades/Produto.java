@@ -39,12 +39,12 @@ public class Produto {
         this.modelo = modelo;
     }
 
-    public double getPrecoBase() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPrecoBase(double precoBase) {
-        this.preco = precoBase;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     @Override

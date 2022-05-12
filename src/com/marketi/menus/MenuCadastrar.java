@@ -2,9 +2,9 @@ package com.marketi.menus;
 
 import com.marketi.menus.*;
 
-public class MenuCadastro  {
+public class MenuCadastrar  {
     
-    MenuCadastro(){
+    MenuCadastrar(){
 
         
     }
