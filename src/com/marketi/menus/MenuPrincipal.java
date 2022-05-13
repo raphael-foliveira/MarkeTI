@@ -68,7 +68,7 @@ public class MenuPrincipal extends Menus {
     public void removerProduto() {
         // Remove um produto do catálogo, caso ele exista. Pede confirmação do usuário
         // para apagar o produto, permitindo que ele cancele a ação
-        Produto produto = buscarProdutoPorId(); // Busca e checagem da existência do produto é feita dentro do método
+        Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto é feita dentro do método
                                                 // buscarProdutoPorId()
         System.out.printf("Tem certeza que deseja apagar %s %s?%n", produto.getMarca(), produto.getModelo());
         String resposta = Leitor.lerString("(s/n): "); // Confirmação do usuário
@@ -82,7 +82,7 @@ public class MenuPrincipal extends Menus {
 
     public void mudarPrecoDeProduto() {
         // Muda o preço de um produto, caso ele exista
-        Produto produto = buscarProdutoPorId(); // Busca e checagem da existência do produto
+        Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto
         // Imprime os dados do produto para conferência do usuário
         System.out.printf("Marca: %s%n", produto.getMarca());
         System.out.printf("Modelo: %s%n", produto.getModelo());
