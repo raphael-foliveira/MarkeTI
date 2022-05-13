@@ -18,10 +18,10 @@ public class Catalogo {
         produtos.add(produto);
     }
 
-    public void remover(Produto produto) {
+    public boolean remover(Produto produto) {
         // remove um produto caso ele exista
         // retorna false se o produto não for encontrado
-        produtos.remove(produto);
+        return produtos.remove(produto);
     }
 
     public Produto encontrarProduto(String id) {
