@@ -28,25 +28,27 @@ public class Monitor extends Produto {
 
         builder.append(
                 String.format(
-                        "|%5s|%10s|%15s|%20s|%10s|%15s|%15s|%10s|%10s|%n",
+                        "|%5s|%10s|%15s|%15s|%10s|%15s|%10s|%15s|%10s|%10s|%n",
                         "Id",
                         "Categoria",
                         "Marca",
                         "Modelo",
                         "Preço",
                         "Lote",
+                        "Tamanho",
                         "Tx. atualização",
                         "Resolução",
                         "Tipo Tela"));
         builder.append(
                 String.format(
-                        "|%5s|%10s|%15s|%20s|R$%8.2f|%15s|%12s Hz|%10s|%10s|%n",
+                        "|%5s|%10s|%15s|%15s|R$%8.2f|%15s|%6s pol|%12s Hz|%10s|%10s|%n",
                         id,
                         categoria,
                         marca,
                         modelo,
                         preco,
                         lote,
+                        tamanho,
                         taxaDeAtualizacao,
                         resolucao,
                         tipoDeTela));
