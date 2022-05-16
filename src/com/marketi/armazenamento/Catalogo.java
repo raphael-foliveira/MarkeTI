@@ -7,6 +7,7 @@ import java.util.List;
 import com.marketi.entidades.*;
 
 public class Catalogo {
+    // classe responsável pelo armazenamento das entidades no catálogo
     List<Produto> produtos;
 
     public Catalogo() {

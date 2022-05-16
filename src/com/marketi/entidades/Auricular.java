@@ -1,7 +1,6 @@
 package com.marketi.entidades;
 
 public class Auricular extends Produto {
-
     final int impedancia, sensibilidade;
     final String conexao;
 
