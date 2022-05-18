@@ -61,6 +61,7 @@ public class MenuCadastrar extends Menus {
         String lote = Leitor.lerString("Lote: ");
         catalogo.adicionar(
                 new Produto(id, marca, modelo, lote, preco));
+        confirmarCadastro(id);
     }
 
     public void cadastrarAuricular() {
@@ -76,6 +77,7 @@ public class MenuCadastrar extends Menus {
         String conexao = Leitor.lerString("Conexão: ");
         catalogo.adicionar(
                 new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conexao));
+        confirmarCadastro(id);
     }
 
     public void cadastrarMonitor() {
@@ -92,6 +94,7 @@ public class MenuCadastrar extends Menus {
         String tipoDeTela = Leitor.lerString("Tipo de tela: ");
         catalogo.adicionar(
                 new Monitor(id, marca, modelo, lote, preco, tamanho, taxaDeAtualizacao, resolucao, tipoDeTela));
+        confirmarCadastro(id);
     }
 
     public void cadastrarComputador() {
@@ -107,6 +110,7 @@ public class MenuCadastrar extends Menus {
         String sistemaOperacional = Leitor.lerString("Conexão: ");
         catalogo.adicionar(
                 new Computador(id, marca, modelo, lote, preco, memoriaRam, armazenamento, sistemaOperacional));
+        confirmarCadastro(id);
     }
 
     public String lerId() {
@@ -117,6 +121,12 @@ public class MenuCadastrar extends Menus {
         }
         System.out.println("Id já cadastrado. Use outro valor");
         return lerId();
+    }
+
+    public void confirmarCadastro(String id) {
+        Produto produto = catalogo.encontrarProduto(id);
+        System.out.println("Produto cadastrado com sucesso: ");
+        System.out.println(produto);
     }
 
 }

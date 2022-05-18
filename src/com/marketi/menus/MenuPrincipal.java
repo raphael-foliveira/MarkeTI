@@ -68,16 +68,27 @@ public class MenuPrincipal extends Menus {
     public void removerProduto() {
         // Remove um produto do catálogo, caso ele exista. Pede confirmação do usuário
         // para apagar o produto, permitindo que ele cancele a ação
-        Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto é feita dentro do método
+        Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto dentro do método
                                                 // buscarProdutoPorId()
+        if (pegarConfirmacaoUsuario(produto)) {
+            catalogo.remover(produto);
+        }
+
+    }
+
+    public boolean pegarConfirmacaoUsuario(Produto produto) {
         System.out.printf("Tem certeza que deseja apagar %s %s?%n", produto.getMarca(), produto.getModelo());
         String resposta = Leitor.lerString("(s/n): "); // Confirmação do usuário
         if (resposta.equals("s")) {
             catalogo.remover(produto);
             System.out.printf("%s removido.%n", produto.getModelo());
-        } else {
+            return true;
+        } else if (resposta.equals("n")) {
             System.out.println("Ação cancelada.");
+            return false;
         }
+        System.out.println("Resposta inválida. Tente novamente");
+        return pegarConfirmacaoUsuario(produto);
     }
 
     public void mudarPrecoDeProduto() {
