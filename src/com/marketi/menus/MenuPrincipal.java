@@ -44,10 +44,12 @@ public class MenuPrincipal extends Menus {
                 mudarPrecoDeProduto();
                 break;
             case 6:
+                // Interrompe a execução do programa
                 System.out.println("Volte sempre");
                 System.exit(0);
                 break;
             default:
+                // Indica opção inválida e executa o menu novamente
                 System.out.println("Opção inválida");
                 break;
         }
