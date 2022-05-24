@@ -21,7 +21,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        // Formata as informações do produto em formato de String
         StringBuilder builder = new StringBuilder();
 
         builder.append(

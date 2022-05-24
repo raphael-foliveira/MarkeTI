@@ -3,13 +3,20 @@ package com.marketi.auxiliares;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Classe responsável pela leitura de dados fornecidos pelo usuário através do
+ * terminal
+ */
 public class Leitor {
-    // Classe responsável pela leitura de dados fornecidos pelo usuário através do
-    // terminal
     private static Scanner scanner;
 
+    /**
+     * Imprime uma mensagem e lê um inteiro
+     * 
+     * @param mensagem Mensagem destinada ao usuário
+     * @return Inteiro digitado pelo usuário
+     */
     public static int lerInt(String mensagem) {
-        // Imprime uma mensagem e lê um inteiro
         scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {
@@ -20,15 +27,25 @@ public class Leitor {
         }
     }
 
+    /**
+     * Imprime uma mensagem e lê uma String
+     * 
+     * @param mensagem Mensagem destinada ao usuário
+     * @return String digitada pelo usuário
+     */
     public static String lerString(String mensagem) {
-        // Imprime uma mensagem e lê uma String
         scanner = new Scanner(System.in);
         System.out.print(mensagem);
         return scanner.nextLine();
     }
 
+    /**
+     * Imprime uma mensagem e lê um double
+     * 
+     * @param mensagem Mensagem destinada ao usuário
+     * @return Double digitado pelo usuário
+     */
     public static double lerDouble(String mensagem) {
-        // Imprime uma mensagem e lê um double
         scanner = new Scanner(System.in);
         System.out.print(mensagem);
         try {

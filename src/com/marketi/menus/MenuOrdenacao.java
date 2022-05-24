@@ -18,7 +18,6 @@ public class MenuOrdenacao extends Menus {
 
     @Override
     public void executar() {
-        // Executa o menu mostrando as opções de ordenação
         printLinha();
         System.out.println("Como deseja ordenar os dados?");
         mostrarOpcoes();
@@ -39,6 +38,8 @@ public class MenuOrdenacao extends Menus {
                 break;
 
             default:
+                System.out.println("Opção inválida");
+                executar();
                 break;
         }
     }
