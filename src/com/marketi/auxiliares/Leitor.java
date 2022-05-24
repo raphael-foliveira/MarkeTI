@@ -1,54 +1,41 @@
 package com.marketi.auxiliares;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
 public class Leitor {
+    // Classe responsável pela leitura de dados fornecidos pelo usuário através do
+    // terminal
+    private static Scanner scanner;
 
-    
-    static Scanner scanner = new Scanner(System.in);
-
-    public static int lerInt(String mensagem){
-
+    public static int lerInt(String mensagem) {
+        // Imprime uma mensagem e lê um inteiro
         scanner = new Scanner(System.in);
-        System.out.println(mensagem);
-
+        System.out.print(mensagem);
         try {
-            
             return scanner.nextInt();
-
-        } catch (Exception e) {
+        } catch (InputMismatchException e) {
+            System.out.println("Esse valor deve ser um número inteiro. Tente novamente.");
             return lerInt(mensagem);
         }
     }
 
-    public static Double lerDouble(String mensagem){
-
+    public static String lerString(String mensagem) {
+        // Imprime uma mensagem e lê uma String
         scanner = new Scanner(System.in);
-
-        System.out.println(mensagem);
-
-        try {
-            
-            return scanner.nextDouble(); 
-
-        } catch (Exception e) {
-            return lerDouble(mensagem);
-        }
+        System.out.print(mensagem);
+        return scanner.nextLine();
     }
 
-    public static String lerString(String mensagem){
-
+    public static double lerDouble(String mensagem) {
+        // Imprime uma mensagem e lê um double
         scanner = new Scanner(System.in);
-
-        System.out.println(mensagem);
-
+        System.out.print(mensagem);
         try {
-            
-            return scanner.next();
-
-        } catch (Exception e) {
-            return lerString(mensagem);
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Esse valor deve ser um número. Tente novamente.");
+            return lerDouble(mensagem);
         }
     }
 }

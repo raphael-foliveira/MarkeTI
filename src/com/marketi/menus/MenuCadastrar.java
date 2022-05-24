@@ -1,41 +1,33 @@
 package com.marketi.menus;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.marketi.armazenamento.*;
-import com.marketi.auxiliares.*;
-import com.marketi.entidades.*;
-import com.marketi.auxiliares.*;
+import com.marketi.armazenamento.Catalogo;
+import com.marketi.auxiliares.Leitor;
+import com.marketi.entidades.Auricular;
+import com.marketi.entidades.Computador;
+import com.marketi.entidades.Monitor;
+import com.marketi.entidades.Produto;
 
-public class MenuCadastrar extends Menu  {
+public class MenuCadastrar extends Menus {
 
-    MenuCadastrar(Catalogo catalogo){
-
+    public MenuCadastrar(Catalogo catalogo) {
         super(catalogo);
-
         opcoes = Arrays.asList(
-
-            "1) Diverso",
-                 "2) Auricular",
-                 "3) Computador", 
-                 "4) Monitor",
-                 "5) Voltar ao menu principal");
-
+                "1) Diverso",
+                "2) Auricular",
+                "3) Computador",
+                "4) Monitor",
+                "5) Voltar ao menu principal");
     }
 
     @Override
     public void executar() {
-
-        Linha();
-
+        // Executa menu de cadastro
+        printLinha();
         System.out.println("Cadastrando novo produto");
-
-        MostrarOpcoes();
-
-        int opcao = Leitor.lerInt(">>>");
-
+        mostrarOpcoes();
+        int opcao = Leitor.lerInt(">>> ");
         switch (opcao) {
             case 1:
                 cadastrarDiverso();
@@ -67,7 +59,9 @@ public class MenuCadastrar extends Menu  {
         String modelo = Leitor.lerString("Modelo: ");
         double preco = Leitor.lerDouble("Preço: ");
         String lote = Leitor.lerString("Lote: ");
-        catalogo.adicionar(new Produto(id, marca, modelo, lote, preco));
+        catalogo.adicionar(
+                new Produto(id, marca, modelo, lote, preco));
+        confirmarCadastro(id);
     }
 
     public void cadastrarAuricular() {
@@ -81,14 +75,16 @@ public class MenuCadastrar extends Menu  {
         int impedancia = Leitor.lerInt("Impedância: ");
         int sensibilidade = Leitor.lerInt("Sensibilidade: ");
         String conexao = Leitor.lerString("Conexão: ");
-        catalogo.adicionar(new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conexao));
+        catalogo.adicionar(
+                new Auricular(id, marca, modelo, lote, preco, impedancia, sensibilidade, conexao));
+        confirmarCadastro(id);
     }
 
     public void cadastrarMonitor() {
         // Cadastra um novo monitor
         System.out.println("Cadastrando monitor");
         String id = lerId();
-        String marca = Leitor.lerString("Marca: "); 
+        String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
         double preco = Leitor.lerDouble("Preço: ");
@@ -98,12 +94,13 @@ public class MenuCadastrar extends Menu  {
         String tipoDeTela = Leitor.lerString("Tipo de tela: ");
         catalogo.adicionar(
                 new Monitor(id, marca, modelo, lote, preco, tamanho, taxaDeAtualizacao, resolucao, tipoDeTela));
+        confirmarCadastro(id);
     }
 
     public void cadastrarComputador() {
         // Cadastrar computador
         System.out.println("Cadastrando computador");
-        String id = lerId(); 
+        String id = lerId();
         String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
@@ -113,17 +110,24 @@ public class MenuCadastrar extends Menu  {
         String sistemaOperacional = Leitor.lerString("Conexão: ");
         catalogo.adicionar(
                 new Computador(id, marca, modelo, lote, preco, memoriaRam, armazenamento, sistemaOperacional));
+        confirmarCadastro(id);
     }
-        
 
-    public String lerId(){
+    public String lerId() {
+        // Lê um id e o retorna caso ele já não pertença a um produto do catálogo
         String id = Leitor.lerString("Id: ");
-
-        if(catalogo.encontrarId(id) == null){
+        if (catalogo.encontrarProduto(id) == null) {
             return id;
         }
         System.out.println("Id já cadastrado. Use outro valor");
         return lerId();
     }
-}
 
+    public void confirmarCadastro(String id) {
+        // Confirma que o produto foi cadastrado
+        Produto produto = catalogo.encontrarProduto(id);
+        System.out.println("Produto cadastrado com sucesso: ");
+        System.out.println(produto);
+    }
+
+}

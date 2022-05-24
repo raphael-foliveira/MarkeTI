@@ -1,50 +1,45 @@
 package com.marketi.menus;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import com.marketi.armazenamento.*;
+import com.marketi.armazenamento.Catalogo;
 import com.marketi.auxiliares.Leitor;
 
-public class MenuOrdenacao extends Menu {
-    
+public class MenuOrdenacao extends Menus {
 
-    MenuOrdenacao(Catalogo catalogo){
-
+    public MenuOrdenacao(Catalogo catalogo) {
         super(catalogo);
-
         opcoes = Arrays.asList(
-            "1) Id", 
-                 "2) Preço", 
-                 "3) Modelo", 
-                 "4) Voltar ao menu principal");
-
+                "1) Id",
+                "2) Preço",
+                "3) Modelo",
+                "4) Voltar ao menu principal");
     }
 
-
     @Override
-    public void executar(){
-        Linha();
-        System.out.println("Escolha a opção para ordenar os dados: ");
-        MostrarOpcoes();
-
-        int opcao = Leitor.lerInt(">>>");
-
+    public void executar() {
+        // Executa o menu mostrando as opções de ordenação
+        printLinha();
+        System.out.println("Como deseja ordenar os dados?");
+        mostrarOpcoes();
+        int opcao = Leitor.lerInt(">>> ");
         switch (opcao) {
             case 1:
-
-            catalogo.ordenacaoId();
-                
+                catalogo.ordenarPorId();
+                break;
+            case 2:
+                catalogo.ordenarPorPreco();
+                break;
+            case 3:
+                catalogo.ordenarPorModelo();
+                break;
+            case 4:
+                MenuPrincipal menuPrincipal = new MenuPrincipal(catalogo);
+                menuPrincipal.executar();
                 break;
 
-            case 2:
-
-            catalogo.ordenacaoPreco();
-        
             default:
                 break;
         }
     }
-
 }
