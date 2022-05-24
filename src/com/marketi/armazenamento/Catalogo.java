@@ -1,11 +1,15 @@
 package com.marketi.armazenamento;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import com.marketi.entidades.*;
 
+/**
+ * Implementação da classe que armazena os produtos
+ */
 public class Catalogo {
     // classe responsável pelo armazenamento das entidades no catálogo
     List<Produto> produtos;
@@ -14,20 +18,32 @@ public class Catalogo {
         produtos = new ArrayList<Produto>();
     }
 
+    /**
+     * Adiciona um produto
+     * 
+     * @param produto
+     */
     public void adicionar(Produto produto) {
-        // adiciona um produto
         produtos.add(produto);
     }
 
+    /**
+     * Remove um produto, caso ele exista
+     * 
+     * @param produto
+     * @return true se o produto for removido, false se não for encontrado
+     */
     public boolean remover(Produto produto) {
-        // remove um produto caso ele exista
-        // retorna false se o produto não for encontrado
         return produtos.remove(produto);
     }
 
+    /**
+     * Encontra um produto
+     * 
+     * @param id
+     * @return O produto, caso ele exista, ou null se não existir
+     */
     public Produto encontrarProduto(String id) {
-        // encontra um produto no catálogo baseado no seu id e o retorna, caso ele
-        // exista
         for (Produto produto : produtos) {
             if (produto.getId().equals(id)) {
                 return produto;
@@ -44,8 +60,8 @@ public class Catalogo {
 
         builder.append(String.format("%s%n", "---------------------------------------"));
 
+        // Cada produto é adicionado à string, sendo separado por uma quebra de linha
         for (Produto produto : produtos) {
-            // Cada produto é adicionado à string, sendo separado por uma quebra de linha
             builder.append(String.format(
                     "|%5s|%20s|R$%8.2f|%n",
                     produto.getId(),
@@ -55,24 +71,33 @@ public class Catalogo {
         return builder.toString();
     }
 
+    /**
+     * Ordena os produtos com base nos Ids
+     */
     public void ordenarPorId() {
-        // Ordena os produtos com base nos Ids
         produtos.sort(Comparator.comparing(Produto::getId));
     }
 
+    /**
+     * Ordena os produtos com base no preço
+     */
     public void ordenarPorPreco() {
-        // Ordena os produtos com base no preço
         produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
+    /**
+     * Ordena os produtos em ordem alfabética (através do nome do modelo)
+     */
     public void ordenarPorModelo() {
-        // Ordena os produtos em ordem alfabética (através do nome do modelo)
+
         produtos.sort(Comparator.comparing(Produto::getModelo));
     }
 
+    /**
+     * adicionando produtos para preencher a lista e demonstrar o funcionamento do
+     * sistema
+     */
     public void adicionarProdutosDemo() {
-        // adicionando produtos para preencher a lista e demonstrar o funcionamento do
-        // sistema
         adicionar(
                 new Produto(
                         "1",

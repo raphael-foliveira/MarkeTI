@@ -3,6 +3,9 @@ package com.marketi.auxiliares;
 import com.marketi.armazenamento.Catalogo;
 import com.marketi.menus.MenuPrincipal;
 
+/**
+ * Classe responsável pela execução do programa
+ */
 public class App {
     public static void run() {
         // criando catálogo
