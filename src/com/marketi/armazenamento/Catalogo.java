@@ -56,14 +56,17 @@ public class Catalogo {
     }
 
     public void ordenarPorId() {
+        // Ordena os produtos com base nos Ids
         produtos.sort(Comparator.comparing(Produto::getId));
     }
 
     public void ordenarPorPreco() {
+        // Ordena os produtos com base no preço
         produtos.sort(Comparator.comparing(Produto::getPreco));
     }
 
     public void ordenarPorModelo() {
+        // Ordena os produtos em ordem alfabética (através do nome do modelo)
         produtos.sort(Comparator.comparing(Produto::getModelo));
     }
 
