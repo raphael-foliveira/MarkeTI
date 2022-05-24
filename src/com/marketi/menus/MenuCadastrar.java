@@ -124,6 +124,7 @@ public class MenuCadastrar extends Menus {
     }
 
     public void confirmarCadastro(String id) {
+        // Confirma que o produto foi cadastrado
         Produto produto = catalogo.encontrarProduto(id);
         System.out.println("Produto cadastrado com sucesso: ");
         System.out.println(produto);
