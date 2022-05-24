@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.marketi.armazenamento.Catalogo;
 
+/**
+ * Classe abstrata que define o formato das classes de menus
+ */
 public abstract class Menus {
-    // classe abstrata que define o formato das classes de menus
 
     Catalogo catalogo;
     List<String> opcoes;
@@ -14,17 +16,28 @@ public abstract class Menus {
         this.catalogo = catalogo;
     }
 
-    public abstract void executar(); // impõe que as classes filhas definam sua execução
+    /**
+     * Executa o menu.
+     * Mostra as opções, lê a opção escolhida pelo usuário e executa o método
+     * desejado
+     */
+    public abstract void executar();
 
+    /**
+     * Imprime para o usuário todas as opções do menu
+     */
     public void mostrarOpcoes() {
-        // imprime para o usuário todas as opções do menu
+
         for (String opcao : opcoes) {
             System.out.println(opcao);
         }
     }
 
+    /**
+     * Imprime uma linha no menu para organização visual
+     */
     public void printLinha() {
-        // imprime uma linha no menu para organização visual
+
         System.out.println("---------------------------------------");
     }
 

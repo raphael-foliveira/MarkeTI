@@ -20,7 +20,6 @@ public class MenuPrincipal extends Menus {
 
     @Override
     public void executar() {
-        // executa o menu principal e permite que o usuário escolha uma das opções
         printLinha();
         System.out.println("Menu principal");
         mostrarOpcoes();
@@ -54,8 +53,12 @@ public class MenuPrincipal extends Menus {
         executar();
     }
 
+    /**
+     * Busca um produto por id, caso ele exista.
+     * 
+     * @return Produto encontrado. Null caso nenhum produto seja encontrado
+     */
     public Produto buscarProdutoPorId() {
-        // Busca um produto por id, caso ele exista.
         String idDoProduto = Leitor.lerString("Digite o id do produto: ");
         Produto produto = catalogo.encontrarProduto(idDoProduto);
         if (produto != null) {
@@ -65,9 +68,11 @@ public class MenuPrincipal extends Menus {
         return buscarProdutoPorId(); // Reexecuta a função caso o id não exista
     }
 
+    /**
+     * Remove um produto do catálogo, caso ele exista. Pede confirmação do usuário
+     * para apagar o produto, permitindo que ele cancele a ação
+     */
     public void removerProduto() {
-        // Remove um produto do catálogo, caso ele exista. Pede confirmação do usuário
-        // para apagar o produto, permitindo que ele cancele a ação
         Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto dentro do método
                                                 // buscarProdutoPorId()
         if (pegarConfirmacaoUsuario(produto)) {
@@ -91,8 +96,10 @@ public class MenuPrincipal extends Menus {
         return pegarConfirmacaoUsuario(produto);
     }
 
+    /**
+     * Muda o preço de um produto, caso ele exista
+     */
     public void mudarPrecoDeProduto() {
-        // Muda o preço de um produto, caso ele exista
         Produto produto = buscarProdutoPorId(); // Busca e checa a existência do produto
         // Imprime os dados do produto para conferência do usuário
         System.out.printf("Marca: %s%n", produto.getMarca());
@@ -103,9 +110,11 @@ public class MenuPrincipal extends Menus {
         System.out.printf("Preço de %s atualizado para %.2f%n", produto.getModelo(), produto.getPreco());
     }
 
+    /**
+     * Lista todos os produtos do catálogo, ordenado de acordo com a escolha de
+     * ordenação do usuário
+     */
     public void listarTodosOsProdutos() {
-        // Lista todos os produtos do catálogo, ordenado de acordo com a escolha de
-        // ordenação do usuário
         MenuOrdenacao menuOrdenacao = new MenuOrdenacao(catalogo);
         menuOrdenacao.executar();
         System.out.println(catalogo);

@@ -23,7 +23,6 @@ public class MenuCadastrar extends Menus {
 
     @Override
     public void executar() {
-        // Executa menu de cadastro
         printLinha();
         System.out.println("Cadastrando novo produto");
         mostrarOpcoes();
@@ -47,12 +46,16 @@ public class MenuCadastrar extends Menus {
                 break;
 
             default:
+                System.out.println("Opção inválida");
+                executar();
                 break;
         }
     }
 
+    /**
+     * Cadastra um novo produto diverso
+     */
     public void cadastrarDiverso() {
-        // Cadastra um novo produto diverso
         System.out.println("Cadastrando produto diverso");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -64,8 +67,10 @@ public class MenuCadastrar extends Menus {
         confirmarCadastro(id);
     }
 
+    /**
+     * Cadastra um novo auricular
+     */
     public void cadastrarAuricular() {
-        // Cadastra um novo auricular
         System.out.println("Cadastrando auricular");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -80,8 +85,10 @@ public class MenuCadastrar extends Menus {
         confirmarCadastro(id);
     }
 
+    /**
+     * Cadastra um novo monitor
+     */
     public void cadastrarMonitor() {
-        // Cadastra um novo monitor
         System.out.println("Cadastrando monitor");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -97,8 +104,10 @@ public class MenuCadastrar extends Menus {
         confirmarCadastro(id);
     }
 
+    /**
+     * Cadastrar computador
+     */
     public void cadastrarComputador() {
-        // Cadastrar computador
         System.out.println("Cadastrando computador");
         String id = lerId();
         String marca = Leitor.lerString("Marca: ");
@@ -113,8 +122,12 @@ public class MenuCadastrar extends Menus {
         confirmarCadastro(id);
     }
 
+    /**
+     * Lê um id e o retorna caso ele já não pertença a um produto do catálogo
+     * 
+     * @return O Id, caso seja válido e não tenha já sido utilizado
+     */
     public String lerId() {
-        // Lê um id e o retorna caso ele já não pertença a um produto do catálogo
         String id = Leitor.lerString("Id: ");
         if (catalogo.encontrarProduto(id) == null) {
             return id;
@@ -123,8 +136,12 @@ public class MenuCadastrar extends Menus {
         return lerId();
     }
 
+    /**
+     * // Confirma que o produto foi cadastrado
+     * 
+     * @param id
+     */
     public void confirmarCadastro(String id) {
-        // Confirma que o produto foi cadastrado
         Produto produto = catalogo.encontrarProduto(id);
         System.out.println("Produto cadastrado com sucesso: ");
         System.out.println(produto);
