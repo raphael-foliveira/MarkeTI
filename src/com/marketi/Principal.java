@@ -7,7 +7,7 @@ import com.marketi.auxiliares.App;
  * Professores: Hermes Pinheiro e Galdir Reges
  * 
  * @author
- *         <li>Raphael de Freitas Oliveira - 1272211685</li>
+ *         Raphael de Freitas Oliveira - 1272211685
  *         <li>Nicolas Batista Lima - 1272217454</li>
  *         <li>Gabriel Reis Badaró - 12722116786</li>
  *         <li>Victor Kenzo Yoza Flores - 12722113537</li>
