@@ -57,7 +57,7 @@ public class MenuCadastrar extends Menus {
      */
     public void cadastrarDiverso() {
         System.out.println("Cadastrando produto diverso");
-        String id = lerId();
+        String id = gerarId();
         String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         double preco = Leitor.lerDouble("Preço: ");
@@ -72,7 +72,7 @@ public class MenuCadastrar extends Menus {
      */
     public void cadastrarAuricular() {
         System.out.println("Cadastrando auricular");
-        String id = lerId();
+        String id = gerarId();
         String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
@@ -90,7 +90,7 @@ public class MenuCadastrar extends Menus {
      */
     public void cadastrarMonitor() {
         System.out.println("Cadastrando monitor");
-        String id = lerId();
+        String id = gerarId();
         String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
@@ -109,7 +109,7 @@ public class MenuCadastrar extends Menus {
      */
     public void cadastrarComputador() {
         System.out.println("Cadastrando computador");
-        String id = lerId();
+        String id = gerarId();
         String marca = Leitor.lerString("Marca: ");
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
@@ -123,17 +123,17 @@ public class MenuCadastrar extends Menus {
     }
 
     /**
-     * Lê um id e o retorna caso ele já não pertença a um produto do catálogo
+     * Gera um id e o retorna caso ele já não pertença a um produto do catálogo.
+     * Caso o id gerado seja repetido, executa a função novamente.
      * 
      * @return O Id, caso seja válido e não tenha já sido utilizado
      */
-    public String lerId() {
-        String id = Leitor.lerString("Id: ");
+    public String gerarId() {
+        String id = String.format("%03d", ((int) (Math.random() * 999)));
         if (catalogo.encontrarProduto(id) == null) {
             return id;
         }
-        System.out.println("Id já cadastrado. Use outro valor");
-        return lerId();
+        return gerarId();
     }
 
     /**

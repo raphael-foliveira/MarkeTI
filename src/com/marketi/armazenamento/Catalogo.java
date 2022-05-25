@@ -99,14 +99,14 @@ public class Catalogo {
     public void adicionarProdutosDemo() {
         adicionar(
                 new Produto(
-                        "1",
+                        "001",
                         "Zowie",
                         "Ec2A",
                         "10",
                         399));
         adicionar(
                 new Computador(
-                        "2",
+                        "002",
                         "Dell",
                         "Onyx",
                         "155vx",
@@ -116,7 +116,7 @@ public class Catalogo {
                         "Windows"));
         adicionar(
                 new Auricular(
-                        "3",
+                        "003",
                         "JBL",
                         "125BT",
                         "KGBUX",
@@ -126,7 +126,7 @@ public class Catalogo {
                         "Bluetooth"));
         adicionar(
                 new Monitor(
-                        "4",
+                        "004",
                         "Acer",
                         "VA270H",
                         "A1098",
@@ -137,14 +137,14 @@ public class Catalogo {
                         "LED"));
         adicionar(
                 new Produto(
-                        "5",
+                        "005",
                         "GFallen",
                         "Falcão Peregrino",
                         "GF21983",
                         399));
         adicionar(
                 new Computador(
-                        "6",
+                        "006",
                         "Apple",
                         "Macbook Pro",
                         "AAP298342893",
@@ -154,7 +154,7 @@ public class Catalogo {
                         "OSX"));
         adicionar(
                 new Auricular(
-                        "7",
+                        "007",
                         "Razer",
                         "Kraken",
                         "RK21983747",
