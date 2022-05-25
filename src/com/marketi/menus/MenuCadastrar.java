@@ -11,8 +11,10 @@ import com.marketi.entidades.Produto;
 
 public class MenuCadastrar extends Menus {
 
+    Catalogo catalogo;
+
     public MenuCadastrar(Catalogo catalogo) {
-        super(catalogo);
+        this.catalogo = catalogo;
         opcoes = Arrays.asList(
                 "1) Diverso",
                 "2) Auricular",

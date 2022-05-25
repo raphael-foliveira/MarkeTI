@@ -2,19 +2,12 @@ package com.marketi.menus;
 
 import java.util.List;
 
-import com.marketi.armazenamento.Catalogo;
-
 /**
  * Classe abstrata que define o formato das classes de menus
  */
 public abstract class Menus {
 
-    Catalogo catalogo;
     List<String> opcoes;
-
-    Menus(Catalogo catalogo) {
-        this.catalogo = catalogo;
-    }
 
     /**
      * Executa o menu.

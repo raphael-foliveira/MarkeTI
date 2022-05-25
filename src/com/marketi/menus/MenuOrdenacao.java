@@ -7,8 +7,10 @@ import com.marketi.auxiliares.Leitor;
 
 public class MenuOrdenacao extends Menus {
 
+    Catalogo catalogo;
+
     public MenuOrdenacao(Catalogo catalogo) {
-        super(catalogo);
+        this.catalogo = catalogo;
         opcoes = Arrays.asList(
                 "1) Id",
                 "2) Preço",

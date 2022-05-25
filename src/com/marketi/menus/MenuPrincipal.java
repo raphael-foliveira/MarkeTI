@@ -7,8 +7,10 @@ import com.marketi.armazenamento.Catalogo;
 
 public class MenuPrincipal extends Menus {
 
+    Catalogo catalogo;
+
     public MenuPrincipal(Catalogo catalogo) {
-        super(catalogo);
+        this.catalogo = catalogo;
         opcoes = Arrays.asList(
                 "1) Cadastrar novo produto",
                 "2) Buscar produto por Id",
