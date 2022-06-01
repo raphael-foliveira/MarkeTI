@@ -97,9 +97,9 @@ public class MenuCadastrar extends Menus {
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
         double preco = Leitor.lerDouble("Preço: ");
-        int tamanho = Leitor.lerInt("Impedância: ");
-        int taxaDeAtualizacao = Leitor.lerInt("Sensibilidade: ");
-        String resolucao = Leitor.lerString("Conexão: ");
+        int tamanho = Leitor.lerInt("Tamanho: ");
+        int taxaDeAtualizacao = Leitor.lerInt("Taxa de Atualização: ");
+        String resolucao = Leitor.lerString("Resolução: ");
         String tipoDeTela = Leitor.lerString("Tipo de tela: ");
         catalogo.adicionar(
                 new Monitor(id, marca, modelo, lote, preco, tamanho, taxaDeAtualizacao, resolucao, tipoDeTela));
@@ -116,9 +116,9 @@ public class MenuCadastrar extends Menus {
         String modelo = Leitor.lerString("Modelo: ");
         String lote = Leitor.lerString("Lote: ");
         double preco = Leitor.lerDouble("Preço: ");
-        int memoriaRam = Leitor.lerInt("Impedância: ");
-        int armazenamento = Leitor.lerInt("Sensibilidade: ");
-        String sistemaOperacional = Leitor.lerString("Conexão: ");
+        int memoriaRam = Leitor.lerInt("Memória RAM: ");
+        int armazenamento = Leitor.lerInt("Armazenamento: ");
+        String sistemaOperacional = Leitor.lerString("Sistema Operacional: ");
         catalogo.adicionar(
                 new Computador(id, marca, modelo, lote, preco, memoriaRam, armazenamento, sistemaOperacional));
         confirmarCadastro(id);
